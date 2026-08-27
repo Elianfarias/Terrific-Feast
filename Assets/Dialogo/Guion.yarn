@@ -2,10 +2,14 @@
 title: Start
 position: 541,34
 ---
-entro al bar, mientras ve el interior escucha ruidos en la cocina y después de unos segundos aparece Osvaldo, su jefe.
+<<osvaldoDesaparece YarnComands>>
+Entro al bar, mientras ve el interior escucha ruidos en la cocina y después de unos segundos aparece Osvaldo, su jefe.
+<<osvaldoAparece YarnComands>>
 OSVALDO: Hola querido, un gusto que te hayas unido a el Bar de Osvaldo, bar n°1 en la región.
 OSVALDO: ¿como estas?
-Todo bi…
+<<activarAuto YarnComands>>
+Todo bi
+<<desactivarAuto YarnComands>>
 OSVALDO: Que bien querido, me alegro.
 OSVALDO: ¿conoces el bar o es la primera vez que venis?
 -> Si, ya vine un par de veces
