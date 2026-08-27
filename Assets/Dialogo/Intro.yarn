@@ -1,0 +1,52 @@
+﻿
+title: Start
+position: 541,34
+---
+entro al bar, mientras ve el interior escucha ruidos en la cocina y después de unos segundos aparece Osvaldo, su jefe.
+OSVALDO: Hola querido, un gusto que te hayas unido a el Bar de Osvaldo, bar n°1 en la región.
+OSVALDO: ¿como estas?
+Todo bi…
+OSVALDO: Que bien querido, me alegro.
+OSVALDO: ¿conoces el bar o es la primera vez que venis?
+-> Si, ya vine un par de veces
+    OSVALDO: Perfecto, entonces no te tengo que explicar sobre la clientela habitual. Vamos atrás para que te muestre como funciona el equipo.
+->No, lo conocí por el anuncio
+    OSVALDO: Bueno, entonces veni a la parte de atrás para que te muestre el equipo y de paso te explico un poco del local.
+    <<jump NoTutorial>>
+<<jump inicioTuto>>
+===
+title: NoTutorial
+position: 202,76
+---
+OSVALDO: Bueno, este es un bar especializado en atender monstruos, clientes peculiares.
+¿Y en qué se diferencian con los humanos?
+OSVALDO: En que los monstruos solo aceptan bebidas mágicas son un poco exigentes.
+¿Solo eso?
+OSVALDO: Y te van a comer si los haces enojar pero bueno, detalles nomas.
+...
+OSVALDO: Quedate tranquilo,la paga más que lo compensa y digamos que no tienes muchas opciones.
+OSVALDO: Ahora callate que te muestro como funciona el sistema.
+<<jump inicioTuto>>
+===
+
+title: inicioTuto
+position: 566,244
+---
+OSVALDO: Bueno, el sistema es sencillo.
+OSVALDO: Básicamente para hacer un trago se divide en 3 etapas el líquido principal, los saborizantes y los adornos.
+OSVALDO: Todas las bebidas tienen un liquido principal pero no todas tienen saborizantes y adornos o incluso pueden tener más de uno de cada uno.
+OSVALDO: Este es el sistema para crear liquidos principales el sistema es sencillos, tienes que usar dos varitas mágicas.
+OSVALDO: Para que sea más sencillos deje unas guías para sepas que tenes qué hacer con cada mano para que salga el líquido que deseamos.
+OSVALDO: Este es el sistema de saborizantes, desafortunadamente para que los hechizos funcionen necesitamos una fuente de energía
+OSVALDO: por suerte las almas de libélulas astrales son perfectas para el trabajo.
+OSVALDO: Solo extermina a una libélula y dibuja el glifo de invocación para aparecer el saborizante que deseas
+OSVALDO: y como con los líquidos deje referencias para que te guies
+OSVALDO: Eso es todo.
+->Creo que te entiendo.
+    OSVALDO: Perfecto ¿qué te parece prepararme un trago? 
+    OSVALDO: Así te acostumbras con las herramientas y yo no soy exigente, solo quiero un caramelo azul con menta polar.
+->Te voy a ser sincero jefe, me perdí en monstruo.
+    OSVALDO: Me encantaría poder explicártelo de vuelta, pero no tenemos mucho tiempo y quiero que pruebes las máquinas. 
+    OSVALDO: Porque mejor no me haces un trago y intentas acordarte a la marcha. 
+    OSVALDO: Solo quiero un caramelo azul con menta polar, y quedate tranquilo si te equivocas que es para aprender.
+===
