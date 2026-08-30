@@ -1,7 +1,9 @@
 ﻿
 title: Start
-position: 541,34
+position: 546,-304
 ---
+<<CargarProgreso YarnComands>>
+
 <<osvaldoDesaparece YarnComands>>
 Entro al bar, mientras ve el interior escucha ruidos en la cocina y después de unos segundos aparece Osvaldo, su jefe.
 <<osvaldoAparece YarnComands>>
@@ -20,7 +22,7 @@ OSVALDO: ¿conoces el bar o es la primera vez que venis?
 <<jump inicioTuto>>
 ===
 title: NoTutorial
-position: 202,76
+position: 13,-198
 ---
 OSVALDO: Bueno, este es un bar especializado en atender monstruos, clientes peculiares.
 ¿Y en qué se diferencian con los humanos?
@@ -34,7 +36,7 @@ OSVALDO: Ahora callate que te muestro como funciona el sistema.
 ===
 
 title: inicioTuto
-position: 566,244
+position: 21,33
 ---
 OSVALDO: Bueno, el sistema es sencillo.
 OSVALDO: Básicamente para hacer un trago se divide en 3 etapas el líquido principal, los saborizantes y los adornos.
@@ -53,4 +55,27 @@ OSVALDO: Eso es todo.
     OSVALDO: Me encantaría poder explicártelo de vuelta, pero no tenemos mucho tiempo y quiero que pruebes las máquinas. 
     OSVALDO: Porque mejor no me haces un trago y intentas acordarte a la marcha. 
     OSVALDO: Solo quiero un caramelo azul con menta polar, y quedate tranquilo si te equivocas que es para aprender.
+<<CambiarTurno YarnComands>>
+<<GuardarProgreso YarnComands>>
+
+ElfurroTest: ¿Quieres cambiar de turno?
+->Cambiar al turno tarde
+    <<jump tardeInicio>>
+->Cambiar al turno noche 
+    <<jump nocheInicio>>
+->nop
+===
+
+title: tardeInicio
+position: 1189,-10
+---
+<<TurnoTarde YarnComands>>
+inicia el turno tarde.
+===
+
+title: nocheInicio
+position: 548,-95
+---
+<<TurnoNoche YarnComands>>
+inicia el turno noche.
 ===
