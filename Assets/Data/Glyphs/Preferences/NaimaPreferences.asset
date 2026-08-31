@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ec451acbb6f52498d91efe505a948e, type: 3}
+  m_Name: NaimaPreferences
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterFlavorPreferences
+  preferences:
+  - glyph: {fileID: 11400000, guid: 429c3a1463875454ca9e52aa615b0463, type: 2}
+    tier: 2
+  - glyph: {fileID: 11400000, guid: 4424079b8eaa1ad47827ad708acea47c, type: 2}
+    tier: 0
+  - glyph: {fileID: 11400000, guid: 282085c6d24858046bde4a61fa099a2e, type: 2}
+    tier: 0
+  - glyph: {fileID: 11400000, guid: 337c9315f72aac34fb3b4232f0cd71be, type: 2}
+    tier: 0
+  - glyph: {fileID: 11400000, guid: 61c76581aee1af044b7bbe94100a20e7, type: 2}
+    tier: 0

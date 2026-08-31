@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf9cd8adede76149980f056d916795d, type: 3}
+  m_Name: Arroz Picante
+  m_EditorClassIdentifier: Assembly-CSharp::DrawPattern
+  glyphName: Arroz Picante
+  referenceSprite: {fileID: 21300000, guid: 37fe2db7aff74404da6c5da8ee41acc3, type: 3}
+  glassSprite: {fileID: 21300000, guid: 4a0d43502fb2ec647b5e529509a7139a, type: 3}
+  pourEffectFrames:
+  - {fileID: -5995171750327713784, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  - {fileID: -8275136852962663753, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  - {fileID: 9213742586970558813, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  - {fileID: -2937886798998022954, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  - {fileID: 963555296551038926, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  nodes:
+  - position: {x: 1.8802919, y: 3.0879998}
+    radius: 0.4
+  - position: {x: 2.020438, y: 2.448}
+    radius: 0.4
+  - position: {x: 2.3124087, y: 1.7280002}
+    radius: 0.4
+  - position: {x: 2.989781, y: 1.1999998}
+    radius: 0.4
+  - position: {x: 3.8423357, y: 0.8959999}
+    radius: 0.4
+  - position: {x: 4.8, y: 0.9920001}
+    radius: 0.4
+  - position: {x: 5.290511, y: 1.44}
+    radius: 0.4
+  - position: {x: 5.3956203, y: 2.144}
+    radius: 0.4
+  - position: {x: 5.1270075, y: 2.736}
+    radius: 0.4
+  - position: {x: 4.7416058, y: 3.152}
+    radius: 0.4
+  - position: {x: 4.1459856, y: 3.2800002}
+    radius: 0.4
+  - position: {x: 3.6554744, y: 3.04}
+    radius: 0.4
+  - position: {x: 3.678832, y: 2.448}
+    radius: 0.4
+  - position: {x: 4.192701, y: 2.368}
+    radius: 0.4
+  - position: {x: 4.5547447, y: 2.672}
+    radius: 0.4
+  - position: {x: 4.788321, y: 3.264}
+    radius: 0.4
+  - position: {x: 4.6248174, y: 4.224}
+    radius: 0.4
+  - position: {x: 4.2861314, y: 4.528}
+    radius: 0.4
+  - position: {x: 3.9474452, y: 4.3199997}
+    radius: 0.4
+  - position: {x: 3.4569342, y: 3.9359999}
+    radius: 0.4
+  - position: {x: 2.8846714, y: 3.824}
+    radius: 0.4
+  - position: {x: 2.1839416, y: 4.08}
+    radius: 0.4
+  - position: {x: 1.7051095, y: 4.528}
+    radius: 0.4
+  - position: {x: 1.4364964, y: 5.248}
+    radius: 0.4
+  - position: {x: 1.5065694, y: 6.064}
+    radius: 0.4
+  - position: {x: 1.9620438, y: 6.736}
+    radius: 0.4
+  - position: {x: 2.7562044, y: 7.136}
+    radius: 0.4
+  - position: {x: 3.7138686, y: 7.088}
+    radius: 0.4
+  - position: {x: 4.578102, y: 6.816}
+    radius: 0.4
+  - position: {x: 5.010219, y: 6.656}
+    radius: 0.4
+  - position: {x: 5.4656935, y: 6.768}
+    radius: 0.4
+  - position: {x: 5.8043795, y: 7.152}
+    radius: 0.4
+  - position: {x: 6.049635, y: 7.696}
+    radius: 0.4
