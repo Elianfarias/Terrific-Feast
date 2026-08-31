@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Water
   - Wall
+  - Goal
   layers:
   - Default
   - TransparentFX
