@@ -15,6 +15,12 @@ MonoBehaviour:
   glyphName: Arroz Picante
   referenceSprite: {fileID: 21300000, guid: 37fe2db7aff74404da6c5da8ee41acc3, type: 3}
   glassSprite: {fileID: 21300000, guid: 4a0d43502fb2ec647b5e529509a7139a, type: 3}
+  pourEffectFrames:
+  - {fileID: -5995171750327713784, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  - {fileID: -8275136852962663753, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  - {fileID: 9213742586970558813, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  - {fileID: -2937886798998022954, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
+  - {fileID: 963555296551038926, guid: 864cc048ae96768419ab15c39a3191ae, type: 3}
   nodes:
   - position: {x: 1.8802919, y: 3.0879998}
     radius: 0.4

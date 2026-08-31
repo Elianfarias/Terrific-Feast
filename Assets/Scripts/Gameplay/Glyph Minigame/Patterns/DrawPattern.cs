@@ -7,5 +7,6 @@ public class DrawPattern : ScriptableObject
     public string glyphName;
     public Sprite referenceSprite;
     public Sprite glassSprite;
+    public Sprite[] pourEffectFrames;
     public List<PatternNode> nodes = new List<PatternNode>();
 }

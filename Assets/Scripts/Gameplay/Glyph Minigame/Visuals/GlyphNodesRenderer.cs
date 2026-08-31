@@ -4,6 +4,8 @@ public class GlyphNodesRenderer : MonoBehaviour
 {
     [SerializeField] private GlyphCastController caster;
     [SerializeField] private PatternRecognizer recognizer;
+    [SerializeField] private SoulEnergy soul;
+    [SerializeField] private SoulCreatureView creature;
     [SerializeField] private PatternNodeVisual nodeVisualPrefab;
     [SerializeField] private Transform nodesParent;
 
@@ -13,6 +15,7 @@ public class GlyphNodesRenderer : MonoBehaviour
     private void OnEnable()
     {
         caster.OnPatternChanged += HandlePatternChanged;
+        creature.OnCreatureGone += HandleCreatureGone;
         recognizer.OnNodeHit += HandleNodeHit;
         recognizer.OnPatternComplete += HandlePatternComplete;
     }
@@ -20,19 +23,31 @@ public class GlyphNodesRenderer : MonoBehaviour
     private void OnDisable()
     {
         caster.OnPatternChanged -= HandlePatternChanged;
+        creature.OnCreatureGone -= HandleCreatureGone;
         recognizer.OnNodeHit -= HandleNodeHit;
         recognizer.OnPatternComplete -= HandlePatternComplete;
     }
 
+    // Igual que GlyphReferenceDisplay: el punto de inicio recién aparece
+    // cuando el glifo se revela de verdad, no antes.
     private void HandlePatternChanged(DrawPattern pattern)
     {
         currentPattern = pattern;
-        ShowNode(0);
+
+        if (soul.IsAvailable)
+            ShowNode(0);
+        else
+            HideIndicator();
     }
 
+    private void HandleCreatureGone() => ShowNode(0);
+
+    // Solo marca el punto de inicio: apenas tocás el primer nodo, se oculta
+    // y no vuelve a aparecer guiando los siguientes.
     private void HandleNodeHit(int index)
     {
-        ShowNode(index + 1);
+        if (index == 0)
+            HideIndicator();
     }
 
     private void HandlePatternComplete(float accuracy)
@@ -40,7 +55,8 @@ public class GlyphNodesRenderer : MonoBehaviour
         HideIndicator();
     }
 
-    // Muestra el marcador en la posición del próximo nodo esperado.
+    // Muestra el marcador en la posición del nodo indicado (usado solo para
+    // el punto de inicio).
     private void ShowNode(int index)
     {
         if (currentPattern == null || nodeVisualPrefab == null || index < 0 || index >= currentPattern.nodes.Count)

@@ -46,11 +46,14 @@ public class ButtonHoverScale : MonoBehaviour, IPointerEnterHandler, IPointerExi
         Refresh();
     }
 
+    // Si hay un scale "externo" activo (ej: seleccionado por click), ese es
+    // el tope y no se combina con el hover/press para no sumarse entre sí.
     private void Refresh()
     {
         float interactionScale = pressed ? pressScale : (hovering ? hoverScale : 1f);
+        float finalScale = externalScale != 1f ? externalScale : interactionScale;
 
         transform.DOKill();
-        transform.DOScale(baseScale * externalScale * interactionScale, duration);
+        transform.DOScale(baseScale * finalScale, duration);
     }
 }

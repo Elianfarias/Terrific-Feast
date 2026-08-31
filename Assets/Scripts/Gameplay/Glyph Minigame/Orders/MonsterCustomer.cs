@@ -13,9 +13,10 @@ public class MonsterCustomer : MonoBehaviour
     [SerializeField] private string monsterId;
 
     [Header("Preferencias (flujo nuevo de sabores)")]
-    [SerializeField] private MonsterFlavorPreferences preferences;
+    [SerializeField] private MonsterPreferencesRegistry preferencesRegistry;
     [SerializeField] private DrinkPreferenceRules rules;
 
+    private MonsterFlavorPreferences preferences;
     private float timeRemaining;
     private bool waiting;
 
@@ -23,6 +24,13 @@ public class MonsterCustomer : MonoBehaviour
     public event Action<MonsterCustomer, PreferenceTier> OnReaction;
 
     public string MonsterId => string.IsNullOrEmpty(monsterId) ? name : monsterId;
+
+    // Busca las preferencias del cliente actual en el registro por su
+    // monsterId, en vez de necesitar un prefab por personaje.
+    private void Awake()
+    {
+        preferences = preferencesRegistry.GetPreferencesFor(MonsterId);
+    }
 
     private void Update()
     {

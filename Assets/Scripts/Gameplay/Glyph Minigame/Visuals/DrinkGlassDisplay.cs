@@ -1,38 +1,24 @@
 using UnityEngine;
 
-// Muestra el vaso vacío al arrancar. Con cada glifo dibujado, se pinta con
-// el color del sabor si salió bien, o queda negro si salió mal, hasta que
-// se acierte uno. Vuelve a vacío recién en un trago/cliente nuevo.
+// Muestra el vaso con la bebida que viene precargada desde el minijuego
+// anterior. Ya no cambia de sprite según los sabores cargados acá: eso se
+// resuelve en la otra escena antes de llegar a esta.
 [RequireComponent(typeof(SpriteRenderer))]
 public class DrinkGlassDisplay : MonoBehaviour
 {
-    [SerializeField] private GlyphCastController caster;
     [SerializeField] private SpriteRenderer spriteRenderer;
-
-    [Header("Sprites")]
-    [SerializeField] private Sprite emptySprite;
-    [SerializeField] private Sprite failSprite;
+    [SerializeField] private Sprite defaultSprite;
 
     private void Awake()
     {
-        spriteRenderer.sprite = emptySprite;
+        if (defaultSprite != null)
+            spriteRenderer.sprite = defaultSprite;
     }
 
-    private void OnEnable() => caster.OnInvocationResolved += HandleInvocationResolved;
-    private void OnDisable() => caster.OnInvocationResolved -= HandleInvocationResolved;
-
-    private void HandleInvocationResolved(GameObject result, DrinkRecipe usedRecipe, float accuracy)
+    // Setea el vaso con la bebida precargada desde el minijuego anterior.
+    public void SetGlass(Sprite glassSprite)
     {
-        bool success = usedRecipe != null && accuracy >= usedRecipe.RequiredAccuracy;
-        Sprite glass = success ? usedRecipe.glyph.glassSprite : failSprite;
-        if (glass == null) return;
-
-        spriteRenderer.sprite = glass;
-    }
-
-    // Vuelve a mostrar el vaso vacío para un trago/cliente nuevo.
-    public void ResetToEmpty()
-    {
-        spriteRenderer.sprite = emptySprite;
+        if (glassSprite == null) return;
+        spriteRenderer.sprite = glassSprite;
     }
 }

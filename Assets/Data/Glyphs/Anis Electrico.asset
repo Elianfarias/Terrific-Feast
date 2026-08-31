@@ -15,6 +15,17 @@ MonoBehaviour:
   glyphName: Anis Electrico
   referenceSprite: {fileID: 21300000, guid: a70e00d2e4808884aab2627939f306d6, type: 3}
   glassSprite: {fileID: 21300000, guid: b4722895e821fbe49a2690dde61a05bc, type: 3}
+  pourEffectFrames:
+  - {fileID: 2203381596962124272, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: 455255580469809208, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: 684313896935610772, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: -6079461415821397352, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: -3632596062249262266, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: -5740018282450838999, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: -146930365954769829, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: -2322119650499133398, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: -2845441646387495576, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
+  - {fileID: 2905160067529651802, guid: 47926d8987a73684f9aeb7f5b8042805, type: 3}
   nodes:
   - position: {x: 3.959124, y: 2.848}
     radius: 0.4

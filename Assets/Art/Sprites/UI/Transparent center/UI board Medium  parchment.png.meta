@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 64d4935741e3aca45a1b8627f8bf10c5
+guid: 1991c690584401b45a94ea6c205357f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1170069481925155653
-    second: panel-transparent-center-015_0
+      213: -2835395502567753267
+    second: UI board Medium  parchment_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: panel-transparent-center-015_0
+      name: UI board Medium  parchment_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 680
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb46357610413cfe0800000000000000
-      internalID: -1170069481925155653
+      spriteID: dc975bf10d6a6a8d0800000000000000
+      internalID: -2835395502567753267
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      panel-transparent-center-015_0: -1170069481925155653
+      UI board Medium  parchment_0: -2835395502567753267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

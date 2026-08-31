@@ -15,6 +15,11 @@ MonoBehaviour:
   glyphName: Fuego Comestible
   referenceSprite: {fileID: 21300000, guid: d3d978fe5c694ff42bc27ad74e11f883, type: 3}
   glassSprite: {fileID: 21300000, guid: 328a3a50ab6c3374697703c4ad50ed99, type: 3}
+  pourEffectFrames:
+  - {fileID: 4377315797840839711, guid: 88fac56721b0fe649b4fc32b8ab9c9e9, type: 3}
+  - {fileID: 8262985155262997086, guid: 88fac56721b0fe649b4fc32b8ab9c9e9, type: 3}
+  - {fileID: -2753854531428044193, guid: 88fac56721b0fe649b4fc32b8ab9c9e9, type: 3}
+  - {fileID: 3633437164035613610, guid: 88fac56721b0fe649b4fc32b8ab9c9e9, type: 3}
   nodes:
   - position: {x: 3.892575, y: 7.008}
     radius: 0.4
