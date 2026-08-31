@@ -91,6 +91,7 @@ TARTU: Quiero que mates todas las libélulas
 title: tartu_reaccion
 position: 21,33
 ---
+<<tartuAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     TARTU: Buen trago, quiero otro.
     Tienes para pagarme
@@ -158,6 +159,7 @@ KERITA: Muchas formalidades, quiero algo fuerte
 title: kerita_reaccion
 position: 21,33
 ---
+<<keritaAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     KERITA: Esto es lo que queria, muchas gracias compa.
 <<else>>
@@ -211,6 +213,7 @@ FUE: Quiero un agrio(inteligible) con fuego co(inteligible) y (inteligible) ican
 title: fue_reaccion
 position: 21,33
 ---
+<<fueAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     FUE: ah esta bueno
 <<else>>
@@ -310,6 +313,7 @@ NAIMA: Es de noche, aunque viendo tu cara tampoco parece un bar siendo que parec
 title: naima_reaccion
 position: 21,33
 ---
+<<naimaAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     NAIMA: umm aceptable. puedes ser un poco despistado pero tienes talento, no lo puedo negar joven.
 <<else>>
