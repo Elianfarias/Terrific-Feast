@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 public class MouseWandMover : MonoBehaviour
 {
     [SerializeField] private Camera cam;
+    [HideInInspector] public bool controlsEnabled = true;
+
     private Rigidbody2D rb;
     private void Awake()
     {
@@ -10,6 +12,8 @@ public class MouseWandMover : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!controlsEnabled) return;
+
         var mouse = Mouse.current;
         if (mouse == null) return;
 
