@@ -15,6 +15,18 @@ public class ButtonHoverScale : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     private void Awake() => baseScale = transform.localScale;
 
+    // Si el panel se desactiva con el mouse encima, OnPointerExit nunca
+    // llega a dispararse y "hovering" queda trabado en true. Al reactivarse
+    // no hay ningún evento que lo corrija, así que lo reseteamos acá.
+    private void OnDisable()
+    {
+        hovering = false;
+        pressed = false;
+
+        transform.DOKill();
+        transform.localScale = baseScale * externalScale;
+    }
+
     // Multiplicador externo (ej: "seleccionado") que se combina con el hover.
     public void SetExternalScale(float multiplier)
     {
