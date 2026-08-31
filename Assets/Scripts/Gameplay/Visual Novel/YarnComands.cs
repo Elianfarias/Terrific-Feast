@@ -1,5 +1,6 @@
 using System.Data.Common;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Yarn;
 using Yarn.Unity;
@@ -28,11 +29,22 @@ public class YarnComands : MonoBehaviour
     public void Awake()
     {
         dialogueRunner.AddFunction("personajeActual",GetActiveChar);
-        dialogueRunner.AddFunction("resultadoMiniJuego",GetMiniGameResult);  
-        dialogueRunner.AddFunction("afectoKerita",afectoKerita); 
-        dialogueRunner.AddFunction("afectoFire",afectoFire); 
+        dialogueRunner.AddFunction("resultadoMiniJuego",GetMiniGameResult);
+        dialogueRunner.AddFunction("afectoKerita",afectoKerita);
+        dialogueRunner.AddFunction("afectoFire",afectoFire);
         dialogueRunner.AddFunction("afectoSapo",afectosSapo);
-        dialogueRunner.AddFunction("afectoVamp",afectoVamp);  
+        dialogueRunner.AddFunction("afectoVamp",afectoVamp);
+
+        // Hay que cargar el progreso ACA (antes de que el DialogueRunner
+        // arranque solo con autoStart) para poder decirle en qué nodo
+        // continuar si venimos de vuelta del minijuego.
+        data.cargarProgreso();
+        if (!string.IsNullOrEmpty(data.Progreso.resumeNode))
+        {
+            dialogueRunner.startNode = data.Progreso.resumeNode;
+            data.Progreso.resumeNode = "";
+            data.guardarProgreso();
+        }
     }
     //Modificacion de variables
     private int GetTurno()
@@ -213,6 +225,16 @@ public class YarnComands : MonoBehaviour
     public void NaimaEDesaparece()
     {
         Naima_Enojado.enabled = false;
+    }
+
+    // nodoRegreso: nodo de Yarn donde hay que continuar la novela visual
+    // cuando se vuelva del minijuego (ej: "tartu_reaccion").
+    [YarnCommand("irAlMinijuego")]
+    public void IrAlMinijuego(string nodoRegreso)
+    {
+        data.Progreso.resumeNode = nodoRegreso;
+        data.guardarProgreso();
+        SceneManager.LoadScene("Glyph Minigame");
     }
 
     [YarnCommand("GuardarProgreso")]

@@ -10,13 +10,11 @@ public class MonsterReactionFeedback : MonoBehaviour
     [SerializeField] private Sprite disgustaSprite;
     [SerializeField] private Sprite neutralSprite;
     [SerializeField] private Sprite gustaSprite;
-    [SerializeField] private Sprite encantaSprite;
 
     [Header("Feedbacks extra (opcional)")]
     [SerializeField] private UnityEvent onDisgusta;
     [SerializeField] private UnityEvent onNeutral;
     [SerializeField] private UnityEvent onGusta;
-    [SerializeField] private UnityEvent onEncanta;
 
     private void OnEnable() => customer.OnReaction += HandleReaction;
     private void OnDisable() => customer.OnReaction -= HandleReaction;
@@ -32,10 +30,6 @@ public class MonsterReactionFeedback : MonoBehaviour
             case PreferenceTier.Gusta:
                 SetFace(gustaSprite);
                 onGusta?.Invoke();
-                break;
-            case PreferenceTier.Encanta:
-                SetFace(encantaSprite);
-                onEncanta?.Invoke();
                 break;
             default:
                 SetFace(neutralSprite);

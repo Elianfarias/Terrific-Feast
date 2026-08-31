@@ -85,11 +85,13 @@ TARTU: Quiero que mates todas las libélulas
     <<tartuAparece YarnComands>>
     TARTU: Aquí tiene el dinero, ahora matelas.
 
-->Mal trago
-    <<tartuDesaparece YarnComands>>
-    <<tartuEAparece YarnComands>>
-    TARTU: ¿Así que las defiendes? creo que aparte de comer libélulas te comere a ti    
-->Buen trago
+<<irAlMinijuego YarnComands "tartu_reaccion">>
+===
+
+title: tartu_reaccion
+position: 21,33
+---
+<<if resultadoMiniJuego()>>
     TARTU: Buen trago, quiero otro.
     Tienes para pagarme
     <<tartuDesaparece YarnComands>>
@@ -103,6 +105,11 @@ TARTU: Quiero que mates todas las libélulas
         <<tartuEDesaparece YarnComands>>
         <<tartuAparece YarnComands>>
         TARTU: No, No, está bien, Osvaldo castigar a Tartu la última vez. Mañana traigo más dinero.
+<<else>>
+    <<tartuDesaparece YarnComands>>
+    <<tartuEAparece YarnComands>>
+    TARTU: ¿Así que las defiendes? creo que aparte de comer libélulas te comere a ti
+<<endif>>
 Gracias, vuelva pronto
 <<tartuDesaparece YarnComands>>
 <<jump osvaldo2>>
@@ -131,6 +138,7 @@ OSVALDO: te veo en unas horas, chiao.
 title: kerita
 position: 21,33
 ---
+<<CambiarPersonaje YarnComands>>
 El día sigue avanzando, ahora es un poco más tarde y el sol ya se empieza a ocultar cuando de la nada la puerta se abre de golpe y entra una joven de manera bruta.
 <<keritaAparece YarnComands>>
 KERITA: EY EY, Tengo sed.
@@ -144,13 +152,20 @@ KERITA: Muchas formalidades, quiero algo fuerte
     KERITA: Uy si que tenes muchos modales, una bebida fuerte con cereza humeante
     KERITA: Quedate tranquilo que si haces lo que te pido voy a hablarle bien a Osvaldo.
 
-->Mal trago
+<<irAlMinijuego YarnComands "kerita_reaccion">>
+===
+
+title: kerita_reaccion
+position: 21,33
+---
+<<if resultadoMiniJuego()>>
+    KERITA: Esto es lo que queria, muchas gracias compa.
+<<else>>
     KERITA: Ugh que asco ¿acaso te hiciste gracioso conmigo?
     <<keritaDesaparece YarnComands>>
     <<keritaEAparece YarnComands>>
     KERITA: ahora te voy a enseñar graciosito.
-->Buen trago
-   KERITA: Esto es lo que queria, muchas gracias compa.
+<<endif>>
 Me alegro que te guste
 KERITA: Raro ver a gente de tu estilo en un lugar como este
 KERITA: ¿Que te trajo a un bar de monstruos?
@@ -176,6 +191,7 @@ KERITA: Chau.
 title: fue
 position: 21,33
 ---
+<<CambiarPersonaje YarnComands>>
 Poco después de que se fuera Kerita, aparece un señor que intenta caminar con un poco de cuidado evitando tocar cualquier objeto.
 cuando llega a la barra.
 <<fueAparece YarnComands>>
@@ -189,13 +205,20 @@ FUE: Quiero un agrio(inteligible) con fuego co(inteligible) y (inteligible) ican
     FUE: ...
     Bueno, veo lo que te puedo hacer.
 
-->Mal trago
+<<irAlMinijuego YarnComands "fue_reaccion">>
+===
+
+title: fue_reaccion
+position: 21,33
+---
+<<if resultadoMiniJuego()>>
+    FUE: ah esta bueno
+<<else>>
     FUE: ugh no me siento muy bien
     <<fueDesaparece YarnComands>>
     <<fueEAparece YarnComands>>
     Fue pierde el control y quema el local
-->Buen trago
-    FUE: ah esta bueno
+<<endif>>
 Che amigo, creo que te tenes que relajarte un poco. no te voy a comer
 FUE: Ya lo sé, es solo que no sé.
 FUE: Como tengo que ser cuidadoso todo el tiempo para no quemar nada tengo miedo a cagarla.
@@ -261,6 +284,7 @@ Osvaldo tira una bomba de humo como si fuera un ninja pero cuando el humo se des
 title: naima
 position: 21,33
 ---
+<<CambiarPersonaje YarnComands>>
 15 minutos antes de cerrar, tus nervios y miedo no pueden mas y vez como las últimas personas también se preparan lentamente para irse cuando de la nada escuchas la puerta y la vez. 
 Sabes en el instante que es ella.
 <<naimaAparece YarnComands>>
@@ -280,13 +304,20 @@ NAIMA: Es de noche, aunque viendo tu cara tampoco parece un bar siendo que parec
     NAIMA: Ugh caballero de esto me quejaré con su jefe. Es un gran Osvaldo.
     NAIMA: Su jefe tendrá un lugar decadente pero ese sabor humeante es de las pocas cosas destacables.
 
-->Buen trago
+<<irAlMinijuego YarnComands "naima_reaccion">>
+===
+
+title: naima_reaccion
+position: 21,33
+---
+<<if resultadoMiniJuego()>>
     NAIMA: umm aceptable. puedes ser un poco despistado pero tienes talento, no lo puedo negar joven.
-->mal trago
+<<else>>
     NAIMA: Espero que esta blasfemia a la que llamas trago haya sido un chiste.
     <<naimaDesaparece YarnComands>>
     <<naimaEAparece YarnComands>>
     NAIMA: lamentablemente no tengo mucho sentido del humor
+<<endif>>
 Agradezco sus palabras.
 NAIMA: Bueno joven, ya es tarde y tengo que volver a mis aposentos pero mañana voy a volver y espero que para esta vez recuerde que tiene que servir
 Sí señora.

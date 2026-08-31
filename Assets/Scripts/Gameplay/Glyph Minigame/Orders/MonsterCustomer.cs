@@ -8,7 +8,7 @@ public class MonsterCustomer : MonoBehaviour
     [SerializeField] private float patienceTime = 15f;
     [SerializeField] private Slider patienceBar;
 
-    [Header("Identidad (para GameStateService)")]
+    [Header("Identidad (coincide con Personaje.cs: 0=Tartu, 1=Kerita, 2=Fue, 3=Naima)")]
     [Tooltip("Si lo dejás vacío, se usa el nombre del GameObject.")]
     [SerializeField] private string monsterId;
 
@@ -29,6 +29,14 @@ public class MonsterCustomer : MonoBehaviour
     // monsterId, en vez de necesitar un prefab por personaje.
     private void Awake()
     {
+        preferences = preferencesRegistry.GetPreferencesFor(MonsterId);
+    }
+
+    // Setea qué personaje es el cliente actual (ej: desde el activeChar del
+    // guardado.json) y vuelve a resolver sus preferencias.
+    public void SetMonsterId(string id)
+    {
+        monsterId = id;
         preferences = preferencesRegistry.GetPreferencesFor(MonsterId);
     }
 

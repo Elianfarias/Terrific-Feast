@@ -12,15 +12,22 @@ using UnityEngine;
          public bool afectoSapo;
          public bool afectoFire;
          public bool afectoKerita;
+         // Nodo de Yarn al que hay que volver al recargar la novela visual
+         // después del minijuego (vacío = arrancar normal desde "Start").
+         public string resumeNode = "";
 
     }
 public class GameStateProgress : MonoBehaviour
 {
     public SaveData Progreso;
-    private string savePath;
+
+    // Calculada al vuelo en vez de cachearla en Awake(): otros scripts (ej.
+    // YarnComands) pueden llamar a cargarProgreso() desde su propio Awake(),
+    // y Unity no garantiza el orden entre Awakes de distintos componentes.
+    private string savePath => Path.Combine(Application.persistentDataPath,"guardado.json");
 
     private void Awake(){
-        savePath=Path.Combine(Application.persistentDataPath,"guardado.json");
+        if (Progreso == null) Progreso = new SaveData();
     }
 
     public void guardarProgreso(){

@@ -492,7 +492,7 @@ MonoBehaviour:
   caster: {fileID: 1070304390}
   creature: {fileID: 1742257885}
   tablaIntro: {fileID: 92932132}
-  targetCustomer: {fileID: 0}
+  targetCustomer: {fileID: 1346126275}
   recipeCatalog:
   - {fileID: 11400000, guid: 39e4822919df84e46831187c7534efee, type: 2}
   - {fileID: 11400000, guid: 54fce7020c96ab94fab12fb5fc80fb2b, type: 2}
@@ -620,6 +620,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrinkGlassDisplay
   spriteRenderer: {fileID: 312839682}
   defaultSprite: {fileID: 21300000, guid: 52b14b2ef35cf1b489a4d7171cc85b36, type: 3}
+--- !u!1 &451334815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451334817}
+  - component: {fileID: 451334816}
+  m_Layer: 0
+  m_Name: Game State Progress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &451334816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451334815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9694fe955906cbb45a4f9ab396889adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameStateProgress
+  Progreso:
+    activeChar: 0
+    turno: 0
+    miniGameResult: 0
+    afectoVamp: 0
+    afectoSapo: 0
+    afectoFire: 0
+    afectoKerita: 0
+    resumeNode: 
+--- !u!4 &451334817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451334815}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1218681129}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605614842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,6 +2477,9 @@ Transform:
   - {fileID: 163990528}
   - {fileID: 1855363001}
   - {fileID: 900000002}
+  - {fileID: 1664946386}
+  - {fileID: 451334817}
+  - {fileID: 1346126278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1277044252
@@ -2623,6 +2679,85 @@ MonoBehaviour:
   duration: 0.12
   hoverSound: {fileID: 8300000, guid: 50efc84d9b1fbc14990c6dcc0b91e2c9, type: 3}
   clickSound: {fileID: 8300000, guid: e9f4963c1e3a27e4085cce82669e83a5, type: 3}
+--- !u!1 &1346126274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346126278}
+  - component: {fileID: 1346126275}
+  - component: {fileID: 1346126277}
+  - component: {fileID: 1346126276}
+  m_Layer: 0
+  m_Name: Monster Customer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1346126275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346126274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f885f7192e16e1945a01934b121e254d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterCustomer
+  patienceTime: 15
+  patienceBar: {fileID: 0}
+  monsterId: 
+  preferencesRegistry: {fileID: 11400000, guid: aec6ec18da7442c28167583017770929, type: 2}
+  rules: {fileID: 11400000, guid: 07eeaa2c8e184b1428f14ac842384133, type: 2}
+--- !u!114 &1346126276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346126274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c23ac4f65acf42a41a5c54f137191cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterStateRecorder
+  customer: {fileID: 1346126275}
+  progress: {fileID: 451334816}
+--- !u!114 &1346126277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346126274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f715ac7bf7fde74788206e8dd458008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ActiveCustomerLoader
+  progress: {fileID: 451334816}
+  customer: {fileID: 1346126275}
+--- !u!4 &1346126278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346126274}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1218681129}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1388640640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,6 +3367,51 @@ MonoBehaviour:
   duration: 0.12
   hoverSound: {fileID: 8300000, guid: 50efc84d9b1fbc14990c6dcc0b91e2c9, type: 3}
   clickSound: {fileID: 8300000, guid: 60ca3e2619154144189c93f008f6d57b, type: 3}
+--- !u!1 &1664946384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664946386}
+  - component: {fileID: 1664946385}
+  m_Layer: 0
+  m_Name: Return To Visual Novel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1664946385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664946384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf0e3767e089ee41a7139959102a087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReturnToVisualNovel
+  sequencer: {fileID: 278461145}
+--- !u!4 &1664946386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664946384}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1218681129}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1742257884
 GameObject:
   m_ObjectHideFlags: 0

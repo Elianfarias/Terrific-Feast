@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -75,9 +76,20 @@ public class UIMainMenu : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 1f;
+            ResetProgress();
             SceneManager.LoadScene(sceneVisualNovel);
             ToggleUIMainMenu();
         }
+    }
+
+    // "Start" desde el Main Menu siempre arranca de cero: borra guardado.json
+    // para que no quede activeChar, afectoX ni resumeNode de una partida anterior.
+    private void ResetProgress()
+    {
+        string path = Path.Combine(Application.persistentDataPath, "guardado.json");
+        if (File.Exists(path))
+            File.Delete(path);
     }
 
     public void ToggleUIMainMenu()
