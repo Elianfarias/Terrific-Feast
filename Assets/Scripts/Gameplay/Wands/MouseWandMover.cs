@@ -9,6 +9,7 @@ public class MouseWandMover : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (cam == null) cam = Camera.main;
     }
     private void FixedUpdate()
     {
