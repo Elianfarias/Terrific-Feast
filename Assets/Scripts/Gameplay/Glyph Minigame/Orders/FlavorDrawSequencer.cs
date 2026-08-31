@@ -64,15 +64,13 @@ public class FlavorDrawSequencer : MonoBehaviour
         caster.ReleaseSoul();
     }
 
+    // Registra el resultado y sigue con la ronda siguiente, o cierra el
+    // trago si ya llegó al máximo.
     private void HandleInvocationResolved(GameObject result, DrinkRecipe usedRecipe, float accuracy)
     {
         if (usedRecipe != null)
             tragoResults.Add(new DrawnFlavorResult(usedRecipe.glyph, accuracy));
-    }
 
-    // Sigue con la ronda siguiente, o cierra el trago si ya llegó al máximo.
-    private void HandleBannerDismissed()
-    {
         drawingGlyph = false;
         caster.SetRecipe(null);
 
