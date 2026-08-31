@@ -54,6 +54,8 @@ public class ButtonHoverScale : MonoBehaviour, IPointerEnterHandler, IPointerExi
         float finalScale = externalScale != 1f ? externalScale : interactionScale;
 
         transform.DOKill();
-        transform.DOScale(baseScale * finalScale, duration);
+        // SetUpdate(true) = tiempo sin escalar, para que funcione con
+        // Time.timeScale = 0 (ej: menú pausado).
+        transform.DOScale(baseScale * finalScale, duration).SetUpdate(true);
     }
 }
