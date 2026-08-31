@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ec451acbb6f52498d91efe505a948e, type: 3}
   m_Name: TartuPreferences
   m_EditorClassIdentifier: Assembly-CSharp::MonsterFlavorPreferences
+  ignoresFlavor: 0
+  universalTier: 2
   preferences:
   - glyph: {fileID: 11400000, guid: 429c3a1463875454ca9e52aa615b0463, type: 2}
     tier: 2
@@ -23,3 +25,4 @@ MonoBehaviour:
     tier: 2
   - glyph: {fileID: 11400000, guid: 61c76581aee1af044b7bbe94100a20e7, type: 2}
     tier: 2
+  pista: Libelula

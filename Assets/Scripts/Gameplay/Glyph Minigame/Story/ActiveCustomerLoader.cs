@@ -8,6 +8,10 @@ public class ActiveCustomerLoader : MonoBehaviour
     // Mismo orden fijo que Personaje.cs (ID FIJOS): 0=Tartu, 1=Kerita, 2=Fue, 3=Naima.
     private static readonly string[] CharacterIds = { "Tartu", "Kerita", "Fue", "Naima" };
 
+    // Nodo de Yarn donde arranca el encuentro con cada personaje (para
+    // reintentarlo entero si el jugador muere en el minijuego).
+    private static readonly string[] EntryNodes = { "tartu", "kerita", "fue", "naima" };
+
     [SerializeField] private GameStateProgress progress;
     [SerializeField] private MonsterCustomer customer;
 
@@ -23,5 +27,12 @@ public class ActiveCustomerLoader : MonoBehaviour
         }
 
         customer.SetMonsterId(CharacterIds[activeChar]);
+        customer.StartWaiting();
+    }
+
+    public static string GetEntryNode(int activeChar)
+    {
+        if (activeChar < 0 || activeChar >= EntryNodes.Length) return "Start";
+        return EntryNodes[activeChar];
     }
 }

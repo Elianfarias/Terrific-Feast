@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Data.Common;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,8 +25,17 @@ public class YarnComands : MonoBehaviour
     [SerializeField] private Personajes personajes;
     //fondos
     [SerializeField] private Fondos fondoActivo;
+    [SerializeField] private RawImage fondoManana;
+    [SerializeField] private RawImage fondoTarde;
+    [SerializeField] private RawImage fondoNoche;
     //LinePresenter es la clase que representa el sistema que genera el texto en pantalla
     [SerializeField] private LinePresenter linePresenter;
+    //Game Over
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private CanvasGroup gameOverGroup;
+    [SerializeField] private AudioClip gameOverSound;
+    [SerializeField] private float gameOverFadeDuration = 0.5f;
+    [SerializeField] private float gameOverDisplaySeconds = 3f;
     //------------------------------------Lista de comandos-------------------------------------
     public void Awake()
     {
@@ -41,9 +52,16 @@ public class YarnComands : MonoBehaviour
         data.cargarProgreso();
         if (!string.IsNullOrEmpty(data.Progreso.resumeNode))
         {
+            // Venimos de vuelta del minijuego o de un Game Over.
             dialogueRunner.startNode = data.Progreso.resumeNode;
             data.Progreso.resumeNode = "";
             data.guardarProgreso();
+        }
+        else if (!string.IsNullOrEmpty(data.Progreso.checkpointNode))
+        {
+            // "Continuar" desde el Main Menu: arrancamos en el último
+            // checkpoint guardado en vez de "Start".
+            dialogueRunner.startNode = data.Progreso.checkpointNode;
         }
     }
     //Modificacion de variables
@@ -79,9 +97,31 @@ public class YarnComands : MonoBehaviour
     {
         fondoActivo.activateBackground(data.Progreso.turno);
     }
+
+    // Fondos de mañana/tarde/noche: solo uno enabled a la vez.
+    private void MostrarFondo(RawImage fondo)
+    {
+        fondoManana.enabled = fondo == fondoManana;
+        fondoTarde.enabled = fondo == fondoTarde;
+        fondoNoche.enabled = fondo == fondoNoche;
+    }
+
+    [YarnCommand("fondoTarde")]
+    public void FondoTarde()
+    {
+        MostrarFondo(fondoTarde);
+    }
+
+    [YarnCommand("fondoNoche")]
+    public void FondoNoche()
+    {
+        MostrarFondo(fondoNoche);
+    }
+    // Valor absoluto (no ++): así reintentar el mismo nodo tras un Game Over
+    // no vuelve a incrementar el personaje activo por error.
     [YarnCommand("CambiarPersonaje")]
-    public void cambiarPersonaje(){
-        data.Progreso.activeChar++;
+    public void cambiarPersonaje(int nuevoId){
+        data.Progreso.activeChar = nuevoId;
     }
     [YarnCommand("AumentarAfectoKerita")]
     public void aumentarAfectoKerita()
@@ -237,9 +277,41 @@ public class YarnComands : MonoBehaviour
         SceneManager.LoadScene("Glyph Minigame");
     }
 
+    // Muestra "Has Muerto", espera, y reinicia el encuentro del personaje
+    // actual desde su nodo de entrada. Devuelve IEnumerator para que el
+    // DialogueRunner espere a que termine antes de seguir con la próxima
+    // línea (si no, seguiría hablando mientras morís).
+    [YarnCommand("gameOver")]
+    public IEnumerator GameOver()
+    {
+        AudioController.Instance?.PauseBackgroundMusic();
+        if (gameOverSound != null)
+            AudioController.Instance?.PlaySoundEffect(gameOverSound);
+
+        gameOverGroup.alpha = 0f;
+        gameOverPanel.SetActive(true);
+
+        gameOverGroup.DOKill();
+        gameOverGroup.DOFade(1f, gameOverFadeDuration).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(gameOverFadeDuration + gameOverDisplaySeconds);
+
+        gameOverGroup.DOFade(0f, gameOverFadeDuration).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(gameOverFadeDuration);
+
+        gameOverPanel.SetActive(false);
+        AudioController.Instance?.ResumeBackgroundMusic();
+
+        data.Progreso.resumeNode = ActiveCustomerLoader.GetEntryNode(data.Progreso.activeChar);
+        data.guardarProgreso();
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("VisualNovelScene");
+    }
+
     [YarnCommand("GuardarProgreso")]
     public void guardarProgreso()
     {
+        data.Progreso.checkpointNode = dialogueRunner.Dialogue.CurrentNode;
         data.guardarProgreso();
     }
 

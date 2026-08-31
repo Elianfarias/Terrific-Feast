@@ -11,6 +11,9 @@ public class MonsterFlavorPreferences : ScriptableObject
 
     public List<FlavorPreference> preferences = new List<FlavorPreference>();
 
+    [Header("Pista para el jugador")]
+    [TextArea(2, 5)] public string pista;
+
     // Tier de este personaje para un glifo (Neutral si no está en la lista).
     public PreferenceTier GetTier(DrawPattern glyph)
     {
