@@ -11,6 +11,14 @@ public class YarnComands : MonoBehaviour
     [SerializeField]private GameState data;
     //imagenes de personajes
     [SerializeField] private RawImage osvaldo;
+    [SerializeField] private RawImage Tartu_Idle;
+    [SerializeField] private RawImage Tartu_Enojado;
+    [SerializeField] private RawImage Kerita_Idle;
+    [SerializeField] private RawImage Kerita_Enojado;
+    [SerializeField] private RawImage Fue_Idle;
+    [SerializeField] private RawImage Fue_Enojado;
+    [SerializeField] private RawImage Naima_Idle;
+    [SerializeField] private RawImage Naima_Enojado;
     [SerializeField] private Personajes personajes;
     //fondos
     [SerializeField] private Fondos fondoActivo;
@@ -111,6 +119,101 @@ public class YarnComands : MonoBehaviour
         osvaldo.enabled=false;
     }
 
+    [YarnCommand("tartuAparece")]
+    public void TartuAparece()
+    {
+        Tartu_Idle.enabled = true;
+    }
+
+    [YarnCommand("tartuDesaparece")]
+    public void TartuDesaparece()
+    {
+        Tartu_Idle.enabled = false;
+    }
+
+    [YarnCommand("tartuEAparece")]
+    public void TartuEAparece()
+    {
+        Tartu_Enojado.enabled = true;
+    }
+
+    [YarnCommand("tartuEDesaparece")]
+    public void TartuEDesaparece()
+    {
+        Tartu_Enojado.enabled = false;
+    }
+
+    [YarnCommand("keritaAparece")]
+    public void KeritaAparece()
+    {
+        Kerita_Idle.enabled = true;
+    }
+
+    [YarnCommand("keritaDesaparece")]
+    public void KeritaDesaparece()
+    {
+        Kerita_Idle.enabled = false;
+    }
+
+    [YarnCommand("keritaEAparece")]
+    public void KeritaEAparece()
+    {
+        Kerita_Enojado.enabled = true;
+    }
+
+    [YarnCommand("keritaEDesaparece")]
+    public void KeritaEDesaparece()
+    {
+        Kerita_Enojado.enabled = false;
+    }
+
+    [YarnCommand("fueAparece")]
+    public void FueAparece()
+    {
+        Fue_Idle.enabled = true;
+    }
+
+    [YarnCommand("fueDesaparece")]
+    public void FueDesaparece()
+    {
+        Fue_Idle.enabled = false;
+    }
+
+    [YarnCommand("fueEAparece")]
+    public void FueEAparece()
+    {
+        Fue_Enojado.enabled = true;
+    }
+
+    [YarnCommand("fueEDesaparece")]
+    public void FueEDesaparece()
+    {
+        Fue_Enojado.enabled = false;
+    }
+
+    [YarnCommand("naimaAparece")]
+    public void NaimaAparece()
+    {
+        Naima_Idle.enabled = true;
+    }
+
+    [YarnCommand("naimaDesaparece")]
+    public void NaimaDesaparece()
+    {
+        Naima_Idle.enabled = false;
+    }
+
+    [YarnCommand("naimaEAparece")]
+    public void NaimaEAparece()
+    {
+        Naima_Enojado.enabled = true;
+    }
+
+    [YarnCommand("naimaEDesaparece")]
+    public void NaimaEDesaparece()
+    {
+        Naima_Enojado.enabled = false;
+    }
 
     [YarnCommand("GuardarProgreso")]
     public void guardarProgreso()
