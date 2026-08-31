@@ -15,7 +15,5 @@ MonoBehaviour:
   disgustaScore: -1
   neutralScore: 0
   gustaScore: 1
-  encantaScore: 2
   minAccuracyToCount: 0.5
   minScoreForGusta: 1
-  minScoreForEncanta: 3

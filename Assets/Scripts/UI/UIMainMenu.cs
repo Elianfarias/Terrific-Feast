@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 public class UIMainMenu : MonoBehaviour
 {
     const string sceneMinigame = "Glyph Minigame";
+    const string sceneVisualNovel = "VisualNovelScene";
     public static UIMainMenu Instance { get; private set; }
     public bool isPause = false;
 
@@ -38,7 +40,7 @@ public class UIMainMenu : MonoBehaviour
     private void Update()
     {
         if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
-            && SceneManager.GetActiveScene().name == sceneMinigame)
+            && (SceneManager.GetActiveScene().name == sceneMinigame || SceneManager.GetActiveScene().name == sceneVisualNovel))
         {
             if (!panelMainMenu.activeSelf && isPause)
                 ToggleUIMainMenu();
@@ -60,7 +62,7 @@ public class UIMainMenu : MonoBehaviour
 
     public void TogglePause()
     {
-        if (SceneManager.GetActiveScene().name == sceneMinigame)
+        if (SceneManager.GetActiveScene().name == sceneMinigame || SceneManager.GetActiveScene().name == sceneVisualNovel)
         {
             isPause = !isPause;
             backgroundInGameImage.enabled = isPause;
@@ -74,9 +76,20 @@ public class UIMainMenu : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(sceneMinigame);
+            Time.timeScale = 1f;
+            ResetProgress();
+            SceneManager.LoadScene(sceneVisualNovel);
             ToggleUIMainMenu();
         }
+    }
+
+    // "Start" desde el Main Menu siempre arranca de cero: borra guardado.json
+    // para que no quede activeChar, afectoX ni resumeNode de una partida anterior.
+    private void ResetProgress()
+    {
+        string path = Path.Combine(Application.persistentDataPath, "guardado.json");
+        if (File.Exists(path))
+            File.Delete(path);
     }
 
     public void ToggleUIMainMenu()

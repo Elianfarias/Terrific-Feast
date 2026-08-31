@@ -49,6 +49,7 @@ public class FlavorDrawSequencer : MonoBehaviour
     private void HandleEnterRequested()
     {
         if (drawingGlyph) return;
+        if (selection.HasReachedMax) return;
         if (!selection.TryConfirmSelection(out DrawPattern flavor)) return;
 
         DrinkRecipe recipe = recipeCatalog.FirstOrDefault(r => r.glyph == flavor);
@@ -64,8 +65,9 @@ public class FlavorDrawSequencer : MonoBehaviour
         caster.ReleaseSoul();
     }
 
-    // Registra el resultado y sigue con la ronda siguiente, o cierra el
-    // trago si ya llegó al máximo.
+    // Registra el resultado y sigue con la ronda siguiente. Al llegar al
+    // máximo de sabores ya no se sirve solo: se bloquea la selección y se
+    // espera a que el jugador aprete "Servir".
     private void HandleInvocationResolved(GameObject result, DrinkRecipe usedRecipe, float accuracy)
     {
         if (usedRecipe != null)
@@ -73,23 +75,21 @@ public class FlavorDrawSequencer : MonoBehaviour
 
         drawingGlyph = false;
         caster.SetRecipe(null);
+        selection.gameObject.SetActive(true);
 
         if (selection.HasReachedMax)
-            CloseTrago();
+            selection.LockAll();
         else
-        {
-            selection.gameObject.SetActive(true);
             creature.Revive();
-        }
     }
 
     // Cierra el trago con lo dibujado hasta ahora, sin esperar a los 3 glifos.
+    // Servir sin ningún sabor es válido (hay clientes que lo piden así).
     public void RequestServe()
     {
         EventSystem.current?.SetSelectedGameObject(null);
 
         if (drawingGlyph) return;
-        if (tragoResults.Count == 0) return;
 
         CloseTrago();
     }
