@@ -97,8 +97,6 @@ public class GameManager : MonoBehaviour
         entry.maze.gameObject.SetActive(true);
         entry.sign.gameObject.SetActive(false);
 
-        winZoneTransform.position = entry.maze.WinZonePosition;
-
         SpawnWandsAndWater(entry);
 
         glass.ShowEmptyGlass();
