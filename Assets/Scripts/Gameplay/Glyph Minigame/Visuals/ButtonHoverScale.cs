@@ -8,6 +8,10 @@ public class ButtonHoverScale : MonoBehaviour, IPointerEnterHandler, IPointerExi
     [SerializeField] private float pressScale = 0.95f;
     [SerializeField] private float duration = 0.12f;
 
+    [Header("Sonido (opcional)")]
+    [SerializeField] private AudioClip hoverSound;
+    [SerializeField] private AudioClip clickSound;
+
     private Vector3 baseScale;
     private bool hovering;
     private bool pressed;
@@ -38,6 +42,9 @@ public class ButtonHoverScale : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         hovering = true;
         Refresh();
+
+        if (hoverSound != null && AudioController.Instance != null)
+            AudioController.Instance.PlaySoundEffect(hoverSound);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -50,6 +57,9 @@ public class ButtonHoverScale : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         pressed = true;
         Refresh();
+
+        if (clickSound != null && AudioController.Instance != null)
+            AudioController.Instance.PlaySoundEffect(clickSound);
     }
 
     public void OnPointerUp(PointerEventData eventData)

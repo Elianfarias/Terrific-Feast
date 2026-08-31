@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 8262985155262997086, guid: 88fac56721b0fe649b4fc32b8ab9c9e9, type: 3}
   - {fileID: -2753854531428044193, guid: 88fac56721b0fe649b4fc32b8ab9c9e9, type: 3}
   - {fileID: 3633437164035613610, guid: 88fac56721b0fe649b4fc32b8ab9c9e9, type: 3}
+  pourEffectSound: {fileID: 8300000, guid: 0ab58c5e3b6e60848a9c09ee91cf10c2, type: 3}
   nodes:
   - position: {x: 3.892575, y: 7.008}
     radius: 0.4
