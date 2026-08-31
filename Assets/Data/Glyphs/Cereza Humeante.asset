@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf9cd8adede76149980f056d916795d, type: 3}
+  m_Name: Cereza Humeante
+  m_EditorClassIdentifier: Assembly-CSharp::DrawPattern
+  glyphName: Cereza Humeante
+  referenceSprite: {fileID: 21300000, guid: c8cbfd9546481514e96521a236570a8b, type: 3}
+  glassSprite: {fileID: 21300000, guid: c17f11840cdc793449010030b84bb89e, type: 3}
+  nodes:
+  - position: {x: 1.1795621, y: 2.0479999}
+    radius: 0.4
+  - position: {x: 1.319708, y: 2.592}
+    radius: 0.4
+  - position: {x: 1.5883212, y: 2.96}
+    radius: 0.4
+  - position: {x: 1.9854015, y: 2.448}
+    radius: 0.4
+  - position: {x: 2.8496351, y: 1.6799998}
+    radius: 0.4
+  - position: {x: 3.7021897, y: 1.3280001}
+    radius: 0.4
+  - position: {x: 4.391241, y: 1.2639999}
+    radius: 0.4
+  - position: {x: 5.1620436, y: 1.3119998}
+    radius: 0.4
+  - position: {x: 5.769343, y: 1.552}
+    radius: 0.4
+  - position: {x: 6.2248178, y: 2.112}
+    radius: 0.4
+  - position: {x: 6.4, y: 2.5279999}
+    radius: 0.4
+  - position: {x: 6.0145984, y: 2.48}
+    radius: 0.4
+  - position: {x: 5.5240874, y: 2.448}
+    radius: 0.4
+  - position: {x: 4.8934307, y: 2.6560001}
+    radius: 0.4
+  - position: {x: 4.3094893, y: 3.12}
+    radius: 0.4
+  - position: {x: 4.858394, y: 3.552}
+    radius: 0.4
+  - position: {x: 5.6175184, y: 4.384}
+    radius: 0.4
+  - position: {x: 6.1313868, y: 5.2320004}
+    radius: 0.4
+  - position: {x: 6.271533, y: 5.856}
+    radius: 0.4
+  - position: {x: 5.6642337, y: 6.544}
+    radius: 0.4
+  - position: {x: 4.8934307, y: 6.864}
+    radius: 0.4
+  - position: {x: 3.9824817, y: 6.96}
+    radius: 0.4
+  - position: {x: 3.2350366, y: 6.832}
+    radius: 0.4
+  - position: {x: 2.49927, y: 6.4960003}
+    radius: 0.4
+  - position: {x: 1.9620438, y: 5.968}
+    radius: 0.4
+  - position: {x: 1.6350365, y: 5.344}
+    radius: 0.4
+  - position: {x: 1.5065694, y: 4.928}
+    radius: 0.4
+  - position: {x: 1.5649635, y: 4.288}
+    radius: 0.4
+  - position: {x: 1.6817518, y: 3.7919998}
+    radius: 0.4
+  - position: {x: 2.160584, y: 3.264}
+    radius: 0.4
+  - position: {x: 2.7211678, y: 3.0240002}
+    radius: 0.4
+  - position: {x: 3.3051095, y: 3.0240002}
+    radius: 0.4
+  - position: {x: 3.830657, y: 3.4720001}
+    radius: 0.4
+  - position: {x: 4.0058393, y: 4.112}
+    radius: 0.4
+  - position: {x: 3.9941607, y: 4.5439997}
+    radius: 0.4
+  - position: {x: 3.6437957, y: 4.896}
+    radius: 0.4
+  - position: {x: 3.2467153, y: 4.88}
+    radius: 0.4
+  - position: {x: 3.0014598, y: 4.608}
+    radius: 0.4

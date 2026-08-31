@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf9cd8adede76149980f056d916795d, type: 3}
+  m_Name: Fuego Comestible
+  m_EditorClassIdentifier: Assembly-CSharp::DrawPattern
+  glyphName: Fuego Comestible
+  referenceSprite: {fileID: 21300000, guid: d3d978fe5c694ff42bc27ad74e11f883, type: 3}
+  glassSprite: {fileID: 21300000, guid: 328a3a50ab6c3374697703c4ad50ed99, type: 3}
+  nodes:
+  - position: {x: 3.892575, y: 7.008}
+    radius: 0.4
+  - position: {x: 3.9684045, y: 5.0880003}
+    radius: 0.4
+  - position: {x: 3.8420222, y: 2.8000002}
+    radius: 0.4
+  - position: {x: 3.7282782, y: 1.552}
+    radius: 0.4
+  - position: {x: 3.5007899, y: 1.152}
+    radius: 0.4
+  - position: {x: 2.843602, y: 0.9920001}
+    radius: 0.4
+  - position: {x: 2.3254344, y: 1.3119998}
+    radius: 0.4
+  - position: {x: 2.022117, y: 1.776}
+    radius: 0.4
+  - position: {x: 2.0094786, y: 2.3839998}
+    radius: 0.4
+  - position: {x: 2.515008, y: 3.0240002}
+    radius: 0.4
+  - position: {x: 3.2227488, y: 3.1360002}
+    radius: 0.4
+  - position: {x: 3.9557662, y: 2.672}
+    radius: 0.4
+  - position: {x: 4.840442, y: 1.8239999}
+    radius: 0.4
+  - position: {x: 5.434439, y: 1.4720001}
+    radius: 0.4
+  - position: {x: 6.129542, y: 1.52}
+    radius: 0.4
+  - position: {x: 6.508689, y: 2.112}
+    radius: 0.4
+  - position: {x: 6.4328594, y: 2.9439998}
+    radius: 0.4
+  - position: {x: 6.078989, y: 3.712}
+    radius: 0.4
+  - position: {x: 4.372828, y: 4.896}
+    radius: 0.4
+  - position: {x: 3.2480252, y: 5.44}
+    radius: 0.4
+  - position: {x: 2.9320695, y: 5.744}
+    radius: 0.4
+  - position: {x: 2.5781991, y: 6.368}
+    radius: 0.4
+  - position: {x: 2.5023696, y: 6.736}
+    radius: 0.4
+  - position: {x: 3.1974723, y: 7.456}
+    radius: 0.4
