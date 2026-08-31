@@ -17,6 +17,7 @@ public class UIMainMenu : MonoBehaviour
 
     [Header("Buttons Main Menu")]
     [SerializeField] private Button btnStart;
+    [SerializeField] private Button btnContinue;
     [SerializeField] private Button btnSettings;
     [SerializeField] private Button btnCredits;
     [SerializeField] private Button btnExit;
@@ -29,12 +30,19 @@ public class UIMainMenu : MonoBehaviour
 
         btnStart.onClick.AddListener(TogglePause);
         btnSettings.onClick.AddListener(OnSettingClicked);
-        btnExit.onClick.AddListener(OnExitClicked);
 
+        if (btnExit != null)
+            btnExit.onClick.AddListener(OnExitClicked);
         if (btnCredits != null)
             btnCredits.onClick.AddListener(OnCreditClicked);
         if (btnBackCredits != null)
             btnBackCredits.onClick.AddListener(OnBackCredits);
+
+        if (btnContinue != null)
+        {
+            btnContinue.onClick.AddListener(OnContinueClicked);
+            btnContinue.gameObject.SetActive(File.Exists(GameStateProgress.SavePath));
+        }
     }
 
     private void Update()
@@ -54,6 +62,8 @@ public class UIMainMenu : MonoBehaviour
         btnStart.onClick.RemoveAllListeners();
         btnSettings.onClick.RemoveAllListeners();
 
+        if (btnContinue != null)
+            btnContinue.onClick.RemoveAllListeners();
         if (btnCredits != null)
             btnCredits.onClick.RemoveAllListeners();
         if (btnBackCredits != null)
@@ -87,9 +97,16 @@ public class UIMainMenu : MonoBehaviour
     // para que no quede activeChar, afectoX ni resumeNode de una partida anterior.
     private void ResetProgress()
     {
-        string path = Path.Combine(Application.persistentDataPath, "guardado.json");
-        if (File.Exists(path))
-            File.Delete(path);
+        if (File.Exists(GameStateProgress.SavePath))
+            File.Delete(GameStateProgress.SavePath);
+    }
+
+    // "Continuar": va directo a la novela visual sin tocar el guardado, para
+    // que YarnComands retome desde el último checkpointNode guardado.
+    private void OnContinueClicked()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneVisualNovel);
     }
 
     public void ToggleUIMainMenu()

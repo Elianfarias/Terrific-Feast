@@ -55,7 +55,6 @@ OSVALDO: Eso es todo.
     OSVALDO: Me encantaría poder explicártelo de vuelta, pero no tenemos mucho tiempo y quiero que pruebes las máquinas. 
     OSVALDO: Porque mejor no me haces un trago y intentas acordarte a la marcha. 
     OSVALDO: Solo quiero un caramelo azul con menta polar, y quedate tranquilo si te equivocas que es para aprender.
-<<GuardarProgreso YarnComands>>
 <<osvaldoDesaparece YarnComands>>
 <<jump tartu>>
 ===
@@ -64,6 +63,7 @@ title: tartu
 position: 21,33
 ---
 Luego de atender a los primeros clientes y cuando te empiezas a poner cómodo en el local, escuchas unos ruidos fuertes en la puerta y de la nada vez una figura grande enfrente tuyo
+<<GuardarProgreso YarnComands>>
 <<tartuAparece YarnComands>>
 TARTU: Hola.
 Hola ¿que se te ofrece algo?
@@ -110,6 +110,7 @@ position: 21,33
     <<tartuDesaparece YarnComands>>
     <<tartuEAparece YarnComands>>
     TARTU: ¿Así que las defiendes? creo que aparte de comer libélulas te comere a ti
+    <<gameOver YarnComands>>
 <<endif>>
 Gracias, vuelva pronto
 <<tartuDesaparece YarnComands>>
@@ -119,6 +120,7 @@ Gracias, vuelva pronto
 title: osvaldo2
 position: 21,33
 ---
+<<fondoTarde YarnComands>>
 Luego de atender a Tartu, avanza un poco el dia y aparece Osvaldo por la puerta de adelante.
 <<osvaldoAparece YarnComands>>
 OSVALDO: ¡Hola querido!
@@ -131,7 +133,6 @@ OSVALDO: Bueno ¿Qué otra cosa te iba a decir?
 OSVALDO: No me acuerdo, no sera algo importante.
 OSVALDO: igual ahora me voy y no vuelvo hasta la noche, tengo que irme a correr una maratón
 OSVALDO: te veo en unas horas, chiao.
-<<GuardarProgreso YarnComands>>
 <<osvaldoDesaparece YarnComands>>
 <<jump kerita>>
 ===
@@ -139,8 +140,10 @@ OSVALDO: te veo en unas horas, chiao.
 title: kerita
 position: 21,33
 ---
-<<CambiarPersonaje YarnComands>>
+<<CambiarPersonaje YarnComands 1>>
 El día sigue avanzando, ahora es un poco más tarde y el sol ya se empieza a ocultar cuando de la nada la puerta se abre de golpe y entra una joven de manera bruta.
+<<GuardarProgreso YarnComands>>
+<<fondoTarde YarnComands>>
 <<keritaAparece YarnComands>>
 KERITA: EY EY, Tengo sed.
 ¿Disculpe?
@@ -159,6 +162,7 @@ KERITA: Muchas formalidades, quiero algo fuerte
 title: kerita_reaccion
 position: 21,33
 ---
+<<fondoTarde YarnComands>>
 <<keritaAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     KERITA: Esto es lo que queria, muchas gracias compa.
@@ -167,6 +171,7 @@ position: 21,33
     <<keritaDesaparece YarnComands>>
     <<keritaEAparece YarnComands>>
     KERITA: ahora te voy a enseñar graciosito.
+    <<gameOver YarnComands>>
 <<endif>>
 Me alegro que te guste
 KERITA: Raro ver a gente de tu estilo en un lugar como este
@@ -193,7 +198,7 @@ KERITA: Chau.
 title: fue
 position: 21,33
 ---
-<<CambiarPersonaje YarnComands>>
+<<CambiarPersonaje YarnComands 2>>
 Poco después de que se fuera Kerita, aparece un señor que intenta caminar con un poco de cuidado evitando tocar cualquier objeto.
 cuando llega a la barra.
 <<fueAparece YarnComands>>
@@ -213,6 +218,8 @@ FUE: Quiero un agrio(inteligible) con fuego co(inteligible) y (inteligible) ican
 title: fue_reaccion
 position: 21,33
 ---
+<<GuardarProgreso YarnComands>>
+<<fondoTarde YarnComands>>
 <<fueAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     FUE: ah esta bueno
@@ -221,6 +228,7 @@ position: 21,33
     <<fueDesaparece YarnComands>>
     <<fueEAparece YarnComands>>
     Fue pierde el control y quema el local
+    <<gameOver YarnComands>>
 <<endif>>
 Che amigo, creo que te tenes que relajarte un poco. no te voy a comer
 FUE: Ya lo sé, es solo que no sé.
@@ -247,6 +255,7 @@ FUE: fue un placer hasta luego y perdón por las molestias
 title: osvaldo3
 position: 21,33
 ---
+<<fondoNoche YarnComands>>
 Ya se hizo de noche, tu primer día está terminando y dentro de poco podrás volver a casa cuando de la nada vuelve a aparecer Osvaldo se le nota un poco agotado de la maratón pero con la misma actitud de siempre.
 <<osvaldoAparece YarnComands>>
 OSVALDO: Hola querido ¿cómo está todo?
@@ -279,7 +288,6 @@ OSVALDO: Mira cualquier cosa preguntale y te pueda ayudar o te de una pista.
 Si no me come antes.
 OSVALDO: Disculpame querido estoy muy cansado ahora y necesito tirarme un rato, vuelvo para el cierre chau.
 Osvaldo tira una bomba de humo como si fuera un ninja pero cuando el humo se despeja aún puedes ver como se termina de meter en la parte de atrás, esperemos que no aparezca.
-<<GuardarProgreso YarnComands>>
 <<osvaldoDesaparece YarnComands>>
 <<jump naima>>
 ===
@@ -287,9 +295,11 @@ Osvaldo tira una bomba de humo como si fuera un ninja pero cuando el humo se des
 title: naima
 position: 21,33
 ---
-<<CambiarPersonaje YarnComands>>
+<<CambiarPersonaje YarnComands 3>>
 15 minutos antes de cerrar, tus nervios y miedo no pueden mas y vez como las últimas personas también se preparan lentamente para irse cuando de la nada escuchas la puerta y la vez. 
 Sabes en el instante que es ella.
+<<GuardarProgreso YarnComands>>
+<<fondoNoche YarnComands>>
 <<naimaAparece YarnComands>>
 NAIMA: ¿Que en este establecimiento se perdió la cortesía de saludar a una señora al entrar?
 <<activarAuto YarnComands>>
@@ -313,6 +323,7 @@ NAIMA: Es de noche, aunque viendo tu cara tampoco parece un bar siendo que parec
 title: naima_reaccion
 position: 21,33
 ---
+<<fondoNoche YarnComands>>
 <<naimaAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     NAIMA: umm aceptable. puedes ser un poco despistado pero tienes talento, no lo puedo negar joven.
@@ -321,6 +332,7 @@ position: 21,33
     <<naimaDesaparece YarnComands>>
     <<naimaEAparece YarnComands>>
     NAIMA: lamentablemente no tengo mucho sentido del humor
+    <<gameOver YarnComands>>
 <<endif>>
 Agradezco sus palabras.
 NAIMA: Bueno joven, ya es tarde y tengo que volver a mis aposentos pero mañana voy a volver y espero que para esta vez recuerde que tiene que servir

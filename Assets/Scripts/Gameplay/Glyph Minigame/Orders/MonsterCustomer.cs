@@ -24,6 +24,7 @@ public class MonsterCustomer : MonoBehaviour
     public event Action<MonsterCustomer, PreferenceTier> OnReaction;
 
     public string MonsterId => string.IsNullOrEmpty(monsterId) ? name : monsterId;
+    public MonsterFlavorPreferences Preferences => preferences;
 
     // Busca las preferencias del cliente actual en el registro por su
     // monsterId, en vez de necesitar un prefab por personaje.
@@ -53,6 +54,13 @@ public class MonsterCustomer : MonoBehaviour
             waiting = false;
             OnPatienceRanOut?.Invoke(this);
         }
+    }
+
+    // Arranca (o reinicia) la cuenta regresiva de paciencia de este cliente.
+    public void StartWaiting()
+    {
+        timeRemaining = patienceTime;
+        waiting = true;
     }
 
     public void Served()

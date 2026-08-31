@@ -37,6 +37,18 @@ public class AudioController : MonoBehaviour
         if(!BackgroundAudioSource.isActiveAndEnabled)
             BackgroundAudioSource.Play();
     }
+
+    // Pause()/UnPause() en vez de Stop()/Play(): así retoma desde el mismo
+    // punto en vez de reiniciar la música desde cero.
+    public void PauseBackgroundMusic()
+    {
+        BackgroundAudioSource.Pause();
+    }
+
+    public void ResumeBackgroundMusic()
+    {
+        BackgroundAudioSource.UnPause();
+    }
     
     public void PlayButtonClickSound()
     {

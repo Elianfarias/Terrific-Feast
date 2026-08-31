@@ -17,9 +17,12 @@ public class FlavorSelectionController : MonoBehaviour
     [SerializeField] private float fadeOutDuration = 0.2f;
 
     private readonly HashSet<DrawPattern> usedFlavors = new HashSet<DrawPattern>();
-    private FlavorSlotView selectedSlot;
 
     public bool HasReachedMax => usedFlavors.Count >= maxFlavors;
+
+    // Se dispara apenas se clickea un sabor válido: ya no hace falta
+    // confirmar con Enter, el click mata la libélula y arranca el glifo.
+    public event System.Action<DrawPattern> OnFlavorChosen;
 
     private void Awake()
     {
@@ -33,71 +36,36 @@ public class FlavorSelectionController : MonoBehaviour
             if (slot != null) slot.OnClicked -= HandleSlotClicked;
     }
 
-    // Desbloquea todos los slots y limpia la selección para un trago nuevo.
+    // Desbloquea todos los slots para un trago nuevo.
     // Reservado para cuando llegue un cliente/trago realmente nuevo.
     public void ResetForNewTrago()
     {
         usedFlavors.Clear();
-        selectedSlot = null;
 
         foreach (var slot in slots)
-        {
-            slot.SetSelected(false);
             slot.SetLocked(false);
-        }
     }
 
     // Bloquea todos los slots tal cual quedaron: el trago ya se sirvió y no
     // se puede seguir eligiendo hasta que arranque uno nuevo.
     public void LockAll()
     {
-        if (selectedSlot != null)
-        {
-            selectedSlot.SetSelected(false);
-            selectedSlot = null;
-        }
-
         foreach (var slot in slots)
             slot.SetLocked(true);
     }
 
+    // Click directo: confirma el sabor al toque (anima el glifo al centro,
+    // lo bloquea) y avisa para que arranque el minijuego de ese sabor.
     private void HandleSlotClicked(FlavorSlotView slot)
     {
         if (usedFlavors.Contains(slot.Flavor)) return;
+        if (HasReachedMax) return;
 
-        if (selectedSlot == slot)
-        {
-            selectedSlot.SetSelected(false);
-            selectedSlot = null;
-            return;
-        }
+        usedFlavors.Add(slot.Flavor);
+        PlayFlyToCenter(slot);
+        slot.SetLocked(true);
 
-        if (selectedSlot != null)
-            selectedSlot.SetSelected(false);
-
-        selectedSlot = slot;
-        selectedSlot.SetSelected(true);
-    }
-
-    // Confirma la selección actual: anima el glifo al centro, lo bloquea
-    // para el resto del trago y devuelve qué sabor era.
-    public bool TryConfirmSelection(out DrawPattern flavor)
-    {
-        if (selectedSlot == null)
-        {
-            flavor = null;
-            return false;
-        }
-
-        flavor = selectedSlot.Flavor;
-        usedFlavors.Add(flavor);
-
-        PlayFlyToCenter(selectedSlot);
-        selectedSlot.SetSelected(false);
-        selectedSlot.SetLocked(true);
-        selectedSlot = null;
-
-        return true;
+        OnFlavorChosen?.Invoke(slot.Flavor);
     }
 
     // Anima el glifo elegido hacia el centro de la pantalla.

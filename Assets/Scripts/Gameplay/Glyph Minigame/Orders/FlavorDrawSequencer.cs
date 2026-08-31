@@ -35,22 +35,20 @@ public class FlavorDrawSequencer : MonoBehaviour
 
     private void OnEnable()
     {
-        caster.OnEnterRequested += HandleEnterRequested;
+        selection.OnFlavorChosen += HandleFlavorChosen;
         caster.OnInvocationResolved += HandleInvocationResolved;
     }
 
     private void OnDisable()
     {
-        caster.OnEnterRequested -= HandleEnterRequested;
+        selection.OnFlavorChosen -= HandleFlavorChosen;
         caster.OnInvocationResolved -= HandleInvocationResolved;
     }
 
-    // Confirma el sabor seleccionado y arranca esa ronda de dibujo.
-    private void HandleEnterRequested()
+    // Clickear un sabor ya lo confirma: mata la libélula y arranca el glifo.
+    private void HandleFlavorChosen(DrawPattern flavor)
     {
         if (drawingGlyph) return;
-        if (selection.HasReachedMax) return;
-        if (!selection.TryConfirmSelection(out DrawPattern flavor)) return;
 
         DrinkRecipe recipe = recipeCatalog.FirstOrDefault(r => r.glyph == flavor);
         if (recipe == null)
