@@ -18,5 +18,8 @@ public class DrinkPourEffect : MonoBehaviour
 
         Sprite[] frames = usedRecipe.glyph.pourEffectFrames;
         flipbook.Play(frames, duration);
+
+        if (usedRecipe.glyph.pourEffectSound != null && AudioController.Instance != null)
+            AudioController.Instance.PlaySoundEffect(usedRecipe.glyph.pourEffectSound);
     }
 }

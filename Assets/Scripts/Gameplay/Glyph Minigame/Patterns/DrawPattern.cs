@@ -8,5 +8,6 @@ public class DrawPattern : ScriptableObject
     public Sprite referenceSprite;
     public Sprite glassSprite;
     public Sprite[] pourEffectFrames;
+    public AudioClip pourEffectSound;
     public List<PatternNode> nodes = new List<PatternNode>();
 }

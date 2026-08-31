@@ -414,7 +414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 0, y: -19.999939}
   m_SizeDelta: {x: -120, y: -240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &223384371
@@ -727,6 +727,7 @@ GameObject:
   - component: {fileID: 607284901}
   - component: {fileID: 607284900}
   - component: {fileID: 607284899}
+  - component: {fileID: 607284902}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -808,6 +809,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &607284902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607284898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cec9910de46ec4f977a5a52cef588a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
+  defaultDuration: 0.25
+  defaultStrength: 0.4
+  vibrato: 20
 --- !u!1 &623708066
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +960,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 8300000, guid: 50efc84d9b1fbc14990c6dcc0b91e2c9, type: 3}
+  clickSound: {fileID: 8300000, guid: 60ca3e2619154144189c93f008f6d57b, type: 3}
 --- !u!1 &644521584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,6 +1348,7 @@ Transform:
   - {fileID: 92932134}
   - {fileID: 312839681}
   - {fileID: 1530241882}
+  - {fileID: 1277044254}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812502923
@@ -1625,6 +1644,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 8300000, guid: 50efc84d9b1fbc14990c6dcc0b91e2c9, type: 3}
+  clickSound: {fileID: 8300000, guid: 60ca3e2619154144189c93f008f6d57b, type: 3}
 --- !u!1 &862664097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1876,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!114 &890331803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2272,8 +2295,8 @@ RectTransform:
   m_GameObject: {fileID: 1184285365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 862664098}
   - {fileID: 223384370}
@@ -2284,7 +2307,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 500}
+  m_SizeDelta: {x: 748.8, y: 528.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184285367
 MonoBehaviour:
@@ -2402,6 +2425,53 @@ Transform:
   - {fileID: 1855363001}
   - {fileID: 900000002}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1277044252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1277044254}
+  - component: {fileID: 1277044253}
+  m_Layer: 0
+  m_Name: Glyph Success Feedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1277044253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277044252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc32c7eb1379174abc7c6efb6f75b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlyphSuccessFeedback
+  caster: {fileID: 1070304390}
+  cameraShake: {fileID: 607284902}
+  successSound: {fileID: 8300000, guid: 3fefcb9b265b2f24d897cd05835740a1, type: 3}
+--- !u!4 &1277044254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277044252}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.6348, y: -2.18488, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 811107259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296758874
 GameObject:
@@ -2551,6 +2621,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 8300000, guid: 50efc84d9b1fbc14990c6dcc0b91e2c9, type: 3}
+  clickSound: {fileID: 8300000, guid: e9f4963c1e3a27e4085cce82669e83a5, type: 3}
 --- !u!1 &1388640640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +2658,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!114 &1388640642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3156,6 +3230,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 8300000, guid: 50efc84d9b1fbc14990c6dcc0b91e2c9, type: 3}
+  clickSound: {fileID: 8300000, guid: 60ca3e2619154144189c93f008f6d57b, type: 3}
 --- !u!1 &1708971456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4956576403918121379, guid: a0b718c4a3a6fc6418a049d11c54a3a9, type: 3}
@@ -3538,6 +3614,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!114 &1786297363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3768,6 +3846,25 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 8300000, guid: 50efc84d9b1fbc14990c6dcc0b91e2c9, type: 3}
+  clickSound: {fileID: 8300000, guid: 60ca3e2619154144189c93f008f6d57b, type: 3}
+--- !u!1 &1787972957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2174682285046565962, guid: 335efea0afa7baf4198c43b0536382d5, type: 3}
+  m_PrefabInstance: {fileID: 1925794126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1787972961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787972957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4974e019c3cb39542974f9af95474c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
 --- !u!1 &1855363000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,6 +4052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
+    - target: {fileID: 4347946052477537837, guid: 335efea0afa7baf4198c43b0536382d5, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bf75d69b6bae0042b85bdf6a3e41a0c, type: 3}
     - target: {fileID: 4705788478849027487, guid: 335efea0afa7baf4198c43b0536382d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 668.7191
@@ -3998,7 +4099,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2174682285046565962, guid: 335efea0afa7baf4198c43b0536382d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1787972961}
   m_SourcePrefab: {fileID: 100100000, guid: 335efea0afa7baf4198c43b0536382d5, type: 3}
 --- !u!82 &1925794127 stripped
 AudioSource:
@@ -4186,6 +4290,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 8300000, guid: 50efc84d9b1fbc14990c6dcc0b91e2c9, type: 3}
+  clickSound: {fileID: 8300000, guid: 60ca3e2619154144189c93f008f6d57b, type: 3}
 --- !u!1 &2091386643
 GameObject:
   m_ObjectHideFlags: 0
