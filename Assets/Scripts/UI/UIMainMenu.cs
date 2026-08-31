@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UIMainMenu : MonoBehaviour
 {
     const string sceneMinigame = "Glyph Minigame";
+    const string sceneVisualNovel = "VisualNovelScene";
     public static UIMainMenu Instance { get; private set; }
     public bool isPause = false;
 
@@ -38,7 +39,7 @@ public class UIMainMenu : MonoBehaviour
     private void Update()
     {
         if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
-            && SceneManager.GetActiveScene().name == sceneMinigame)
+            && (SceneManager.GetActiveScene().name == sceneMinigame || SceneManager.GetActiveScene().name == sceneVisualNovel))
         {
             if (!panelMainMenu.activeSelf && isPause)
                 ToggleUIMainMenu();
@@ -60,7 +61,7 @@ public class UIMainMenu : MonoBehaviour
 
     public void TogglePause()
     {
-        if (SceneManager.GetActiveScene().name == sceneMinigame)
+        if (SceneManager.GetActiveScene().name == sceneMinigame || SceneManager.GetActiveScene().name == sceneVisualNovel)
         {
             isPause = !isPause;
             backgroundInGameImage.enabled = isPause;
@@ -74,7 +75,7 @@ public class UIMainMenu : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(sceneMinigame);
+            SceneManager.LoadScene(sceneVisualNovel);
             ToggleUIMainMenu();
         }
     }

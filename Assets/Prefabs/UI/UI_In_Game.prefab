@@ -417,6 +417,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!1001 &1669214110748096200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1079,6 +1081,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!224 &6340686734504085197 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7661621613867338335, guid: 4bb0fd379a49abb4fbf732b3434a9dfc, type: 3}
@@ -1631,6 +1635,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1654035845951101683, guid: 579c02f74a0c97747ac73d4599e03de3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2707353476938648794}
+    - targetCorrespondingSourceObject: {fileID: 1654035845951101683, guid: 579c02f74a0c97747ac73d4599e03de3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6958925618546670286}
   m_SourcePrefab: {fileID: 100100000, guid: 579c02f74a0c97747ac73d4599e03de3, type: 3}
 --- !u!224 &2454815787231332116 stripped
 RectTransform:
@@ -1668,6 +1675,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &6958925618546670286
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4956576403918121379}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &6018135447350946907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2283,6 +2302,8 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
 --- !u!1 &1778261267880227824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4888144446874465943, guid: 86d6e13ea5c364c4185682d01d21580d, type: 3}
@@ -2365,3 +2386,5 @@ MonoBehaviour:
   hoverScale: 1.08
   pressScale: 0.95
   duration: 0.12
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
