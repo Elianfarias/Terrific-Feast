@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/VisualNovelScene.unity
     guid: b1c9cd2d7dd53014aac76a1a857b249b
   - enabled: 1
+    path: Assets/Scenes/WandMinigameScene.unity
+    guid: fea9ebe5e1d65a5449459e78e2c13ae4
+  - enabled: 1
     path: Assets/Scenes/Glyph Minigame.unity
     guid: ed9aa6286d451b34db7d9d9e56a2adc5
   m_configObjects:

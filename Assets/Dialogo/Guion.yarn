@@ -295,6 +295,7 @@ Osvaldo tira una bomba de humo como si fuera un ninja pero cuando el humo se des
 title: naima
 position: 21,33
 ---
+<<fondoNoche YarnComands>>
 <<CambiarPersonaje YarnComands 3>>
 15 minutos antes de cerrar, tus nervios y miedo no pueden mas y vez como las últimas personas también se preparan lentamente para irse cuando de la nada escuchas la puerta y la vez. 
 Sabes en el instante que es ella.
@@ -354,5 +355,5 @@ Sabes que no me lo cuentes, quiero conocerlos en el momento.
 OSVALDO: Esa es la actitud, ahora vamos a levantar las sillas.
 Levantas las sillas con OSVALDO, limpias un poco y te vas sabiendo que nada va a ser tan estresante como este primer dia.
 <<osvaldoDesaparece YarnComands>>
-FIN
+<<mostrarFinal YarnComands>>
 ===

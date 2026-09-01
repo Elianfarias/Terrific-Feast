@@ -7,6 +7,7 @@ public class UIMainMenu : MonoBehaviour
 {
     const string sceneMinigame = "Glyph Minigame";
     const string sceneVisualNovel = "VisualNovelScene";
+    const string sceneWandMinigame = "WandMinigameScene";
     public static UIMainMenu Instance { get; private set; }
     public bool isPause = false;
 
@@ -48,7 +49,9 @@ public class UIMainMenu : MonoBehaviour
     private void Update()
     {
         if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
-            && (SceneManager.GetActiveScene().name == sceneMinigame || SceneManager.GetActiveScene().name == sceneVisualNovel))
+            && (SceneManager.GetActiveScene().name == sceneMinigame 
+            || SceneManager.GetActiveScene().name == sceneVisualNovel
+            || SceneManager.GetActiveScene().name == sceneWandMinigame))
         {
             if (!panelMainMenu.activeSelf && isPause)
                 ToggleUIMainMenu();
@@ -72,7 +75,9 @@ public class UIMainMenu : MonoBehaviour
 
     public void TogglePause()
     {
-        if (SceneManager.GetActiveScene().name == sceneMinigame || SceneManager.GetActiveScene().name == sceneVisualNovel)
+        if (SceneManager.GetActiveScene().name == sceneMinigame 
+            || SceneManager.GetActiveScene().name == sceneVisualNovel
+            || SceneManager.GetActiveScene().name == sceneWandMinigame)
         {
             isPause = !isPause;
             backgroundInGameImage.enabled = isPause;

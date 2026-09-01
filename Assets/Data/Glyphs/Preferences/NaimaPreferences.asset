@@ -25,4 +25,17 @@ MonoBehaviour:
     tier: 0
   - glyph: {fileID: 11400000, guid: 61c76581aee1af044b7bbe94100a20e7, type: 2}
     tier: 0
+  liquidPreferences:
+  - liquid: {fileID: 11400000, guid: 0268fe18eade5d24ea0951c21e9cfef8, type: 2}
+    tier: 0
+  - liquid: {fileID: 11400000, guid: e256ce548853c7d4abb5c40829442855, type: 2}
+    tier: 0
+  - liquid: {fileID: 11400000, guid: efc712632d8ca114c997c774ff7fe024, type: 2}
+    tier: 2
+  - liquid: {fileID: 11400000, guid: 7fa90be19739dda49a7aebf65506e67b, type: 2}
+    tier: 0
+  - liquid: {fileID: 11400000, guid: 8f2ae81437562484e8f7883837cb7b28, type: 2}
+    tier: 0
+  - liquid: {fileID: 11400000, guid: 0e9d2bf015408f84d9995e8d31fa1aee, type: 2}
+    tier: 0
   pista: Le gusta humeante

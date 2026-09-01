@@ -68,11 +68,14 @@ public class MonsterCustomer : MonoBehaviour
         waiting = false;
     }
 
-    // Suma el puntaje de cada glifo dibujado contra las preferencias de
-    // este personaje y devuelve la reacción final del trago.
-    public PreferenceTier EvaluateTrago(List<DrawnFlavorResult> results)
+    // Suma el puntaje del líquido principal (Wand Minigame) más el de cada
+    // glifo dibujado, y devuelve la reacción final combinando ambos minijuegos.
+    public PreferenceTier EvaluateTrago(List<DrawnFlavorResult> results, MazeSignData liquid = null)
     {
         int totalScore = 0;
+
+        if (liquid != null)
+            totalScore += rules.ScoreFor(preferences.GetLiquidTier(liquid));
 
         foreach (var result in results)
         {

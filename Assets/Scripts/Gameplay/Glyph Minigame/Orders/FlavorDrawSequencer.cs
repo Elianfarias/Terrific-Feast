@@ -12,6 +12,10 @@ public class FlavorDrawSequencer : MonoBehaviour
     [SerializeField] private MonsterCustomer targetCustomer;
     [SerializeField] private List<DrinkRecipe> recipeCatalog = new List<DrinkRecipe>();
 
+    [Header("Ayudas (se ocultan mientras se dibuja)")]
+    [SerializeField] private GameObject hintButton;
+    [SerializeField] private GameObject tutorialButton;
+
     private readonly List<DrawnFlavorResult> tragoResults = new List<DrawnFlavorResult>();
     private bool drawingGlyph;
 
@@ -59,8 +63,15 @@ public class FlavorDrawSequencer : MonoBehaviour
 
         drawingGlyph = true;
         selection.gameObject.SetActive(false);
+        SetHelpButtonsVisible(false);
         caster.SetRecipe(recipe);
         caster.ReleaseSoul();
+    }
+
+    private void SetHelpButtonsVisible(bool visible)
+    {
+        if (hintButton != null) hintButton.SetActive(visible);
+        if (tutorialButton != null) tutorialButton.SetActive(visible);
     }
 
     // Registra el resultado y sigue con la ronda siguiente. Al llegar al
@@ -74,6 +85,7 @@ public class FlavorDrawSequencer : MonoBehaviour
         drawingGlyph = false;
         caster.SetRecipe(null);
         selection.gameObject.SetActive(true);
+        SetHelpButtonsVisible(true);
 
         if (selection.HasReachedMax)
             selection.LockAll();
@@ -101,7 +113,7 @@ public class FlavorDrawSequencer : MonoBehaviour
 
         if (targetCustomer != null)
         {
-            PreferenceTier reaction = targetCustomer.EvaluateTrago(tragoResults);
+            PreferenceTier reaction = targetCustomer.EvaluateTrago(tragoResults, WandMinigameSession.SelectedLiquid);
             targetCustomer.ReactTo(reaction);
         }
 
