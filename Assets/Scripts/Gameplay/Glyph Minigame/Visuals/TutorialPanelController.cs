@@ -76,6 +76,8 @@ public class TutorialPanelController : MonoBehaviour
         TutorialPage page = pages[pageIndex];
         titleText.text = page.title;
         bodyText.text = page.body;
-        nextButtonRoot.SetActive(pageIndex < pages.Count - 1);
+
+        if(nextButtonRoot != null)
+            nextButtonRoot.SetActive(pageIndex < pages.Count - 1);
     }
 }

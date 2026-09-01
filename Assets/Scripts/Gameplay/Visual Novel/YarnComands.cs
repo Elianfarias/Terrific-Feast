@@ -268,13 +268,16 @@ public class YarnComands : MonoBehaviour
     }
 
     // nodoRegreso: nodo de Yarn donde hay que continuar la novela visual
-    // cuando se vuelva del minijuego (ej: "tartu_reaccion").
+    // cuando se termine todo el flujo del trago (ej: "tartu_reaccion").
+    // El flujo completo es: Wand Minigame (armar la bebida base) -> Glyph
+    // Minigame (saborizantes) -> de vuelta a esta escena en nodoRegreso.
+    // El propio Wand Minigame es el que avanza al Glyph Minigame al ganar.
     [YarnCommand("irAlMinijuego")]
     public void IrAlMinijuego(string nodoRegreso)
     {
         data.Progreso.resumeNode = nodoRegreso;
         data.guardarProgreso();
-        SceneManager.LoadScene("Glyph Minigame");
+        SceneManager.LoadScene("WandMinigameScene");
     }
 
     // Muestra "Has Muerto", espera, y reinicia el encuentro del personaje

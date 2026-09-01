@@ -11,6 +11,9 @@ public class MonsterFlavorPreferences : ScriptableObject
 
     public List<FlavorPreference> preferences = new List<FlavorPreference>();
 
+    [Header("Preferencias del líquido principal (Wand Minigame)")]
+    public List<LiquidPreference> liquidPreferences = new List<LiquidPreference>();
+
     [Header("Pista para el jugador")]
     [TextArea(2, 5)] public string pista;
 
@@ -20,6 +23,13 @@ public class MonsterFlavorPreferences : ScriptableObject
         if (ignoresFlavor) return universalTier;
 
         FlavorPreference match = preferences.FirstOrDefault(p => p.glyph == glyph);
+        return match != null ? match.tier : PreferenceTier.Neutral;
+    }
+
+    // Tier de este personaje para el líquido principal (Neutral si no está en la lista).
+    public PreferenceTier GetLiquidTier(MazeSignData liquid)
+    {
+        LiquidPreference match = liquidPreferences.FirstOrDefault(p => p.liquid == liquid);
         return match != null ? match.tier : PreferenceTier.Neutral;
     }
 }
