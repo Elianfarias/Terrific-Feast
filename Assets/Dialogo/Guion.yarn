@@ -355,5 +355,5 @@ Sabes que no me lo cuentes, quiero conocerlos en el momento.
 OSVALDO: Esa es la actitud, ahora vamos a levantar las sillas.
 Levantas las sillas con OSVALDO, limpias un poco y te vas sabiendo que nada va a ser tan estresante como este primer dia.
 <<osvaldoDesaparece YarnComands>>
-FIN
+<<mostrarFinal YarnComands>>
 ===

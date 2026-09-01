@@ -36,6 +36,9 @@ public class YarnComands : MonoBehaviour
     [SerializeField] private AudioClip gameOverSound;
     [SerializeField] private float gameOverFadeDuration = 0.5f;
     [SerializeField] private float gameOverDisplaySeconds = 3f;
+    //Final del juego
+    [SerializeField] private GameObject endPanel;
+    [SerializeField] private AudioClip endSound;
     //------------------------------------Lista de comandos-------------------------------------
     public void Awake()
     {
@@ -309,6 +312,23 @@ public class YarnComands : MonoBehaviour
 
         Time.timeScale = 1f;
         SceneManager.LoadScene("VisualNovelScene");
+    }
+
+    // Reemplaza el "FIN" de texto plano: muestra el panel de cierre con el
+    // botón Salir en vez de solo cortar el diálogo.
+    [YarnCommand("mostrarFinal")]
+    public void MostrarFinal()
+    {
+        endPanel.SetActive(true);
+
+        if (endSound != null)
+            AudioController.Instance?.PlaySoundEffect(endSound);
+    }
+
+    // Conectar al OnClick del botón "Salir" dentro del panel final.
+    public void Salir()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     [YarnCommand("GuardarProgreso")]
