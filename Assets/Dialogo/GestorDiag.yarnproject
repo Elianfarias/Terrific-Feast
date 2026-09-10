@@ -1,0 +1,25 @@
+{
+    "projectFileVersion": 4,
+    "sourceFiles": [
+        "**/*.yarn"
+    ],
+    "excludeFiles": [
+        "**/*~/*",
+        "./Samples/Yarn Spinner*/*"
+    ],
+    "localisation": {},
+    "baseLanguage": "es",
+    "compilerOptions": {
+        "diagnosticsSeverity": {}
+    },
+    "editorOptions": {
+        "yarnScriptEditor": {
+            "projectGraphPositions": {
+                "Guion.yarn": {
+                    "x": -526,
+                    "y": -1169
+                }
+            }
+        }
+    }
+}

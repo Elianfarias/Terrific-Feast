@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: 06049c8546fa6a54296cda7241ba5689
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2705364980220834481
+    second: efectodepuntitos_0
+  - first:
+      213: -1030563899389383187
+    second: efectodepuntitos_1
+  - first:
+      213: 5264577939755605745
+    second: efectodepuntitos_2
+  - first:
+      213: 8332574872774388829
+    second: efectodepuntitos_3
+  - first:
+      213: 3566746795417505276
+    second: efectodepuntitos_4
+  - first:
+      213: 3026148640522503289
+    second: efectodepuntitos_5
+  - first:
+      213: 3842450622879618105
+    second: efectodepuntitos_6
+  - first:
+      213: 1165384363498698573
+    second: efectodepuntitos_7
+  - first:
+      213: -6318130989987186808
+    second: efectodepuntitos_8
+  - first:
+      213: -533617653192406027
+    second: efectodepuntitos_9
+  - first:
+      213: -6874747933670008728
+    second: efectodepuntitos_10
+  - first:
+      213: 1139083337648887570
+    second: efectodepuntitos_11
+  - first:
+      213: -3568123174092388026
+    second: efectodepuntitos_12
+  - first:
+      213: 3389330132030956749
+    second: efectodepuntitos_13
+  - first:
+      213: 4068849296646606012
+    second: efectodepuntitos_14
+  - first:
+      213: -3738837103497300137
+    second: efectodepuntitos_15
+  - first:
+      213: -8655716842236649667
+    second: efectodepuntitos_16
+  - first:
+      213: -7986542328948267158
+    second: efectodepuntitos_17
+  - first:
+      213: -371784722468405618
+    second: efectodepuntitos_18
+  - first:
+      213: 2454842293054716090
+    second: efectodepuntitos_19
+  - first:
+      213: 2850029908730104083
+    second: efectodepuntitos_20
+  - first:
+      213: -5481965608840300637
+    second: efectodepuntitos_21
+  - first:
+      213: -7933709537884961415
+    second: efectodepuntitos_22
+  - first:
+      213: -5507224447189590971
+    second: efectodepuntitos_23
+  - first:
+      213: -5072555284727272743
+    second: efectodepuntitos_24
+  - first:
+      213: -7801416297808428240
+    second: efectodepuntitos_25
+  - first:
+      213: 7092233673579976445
+    second: efectodepuntitos_26
+  - first:
+      213: 69327407845946076
+    second: efectodepuntitos_27
+  - first:
+      213: -1513905645646237426
+    second: efectodepuntitos_28
+  - first:
+      213: 2259300948894359225
+    second: efectodepuntitos_29
+  - first:
+      213: -6721775187458245089
+    second: efectodepuntitos_30
+  - first:
+      213: 8603711135624038851
+    second: efectodepuntitos_31
+  - first:
+      213: -8317740941682852789
+    second: efectodepuntitos_32
+  - first:
+      213: -5928653747680053197
+    second: efectodepuntitos_33
+  - first:
+      213: 4007789553914812931
+    second: efectodepuntitos_34
+  - first:
+      213: 2745068358840750351
+    second: efectodepuntitos_35
+  - first:
+      213: -3962226435234082710
+    second: efectodepuntitos_36
+  - first:
+      213: -2802877995600232032
+    second: efectodepuntitos_37
+  - first:
+      213: -4744398787073260884
+    second: efectodepuntitos_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: efectodepuntitos_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 146
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b238d9ad136b8520800000000000000
+      internalID: 2705364980220834481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: efectodepuntitos_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 2
+        width: 146
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deded8af793b2b1f0800000000000000
+      internalID: -1030563899389383187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: efectodepuntitos_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 2
+        width: 146
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe9d774eb98f0940800000000000000
+      internalID: 5264577939755605745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: efectodepuntitos_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 2
+        width: 146
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c201ce2b043a370800000000000000
+      internalID: 8332574872774388829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: efectodepuntitos_4
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 2
+        width: 146
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd8f902051af7130800000000000000
+      internalID: 3566746795417505276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 22c717c15f5f28941b2e9fd060e3989c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":146.0,"y":142.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      efectodepuntitos_0: 2705364980220834481
+      efectodepuntitos_1: -1030563899389383187
+      efectodepuntitos_2: 5264577939755605745
+      efectodepuntitos_3: 8332574872774388829
+      efectodepuntitos_4: 3566746795417505276
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

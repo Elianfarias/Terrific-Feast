@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Signs / Mazes / Drinks")]
@@ -25,8 +26,14 @@ public class GameManager : MonoBehaviour
     [Header("Camera")]
     [SerializeField] private Camera mainCamera;
 
+    [Header("Hint")]
+    [SerializeField] private GameObject hintObject;
+
+    [Header("Feedback")]
+    [SerializeField] private CameraShake cameraShake;
+
     [Header("Config")]
-    [SerializeField] private float waterRiseSpeed = 0.1f;
+    [SerializeField] private float waterRiseSpeed = 0.7f;
     [SerializeField] private float retryDelay = 0.6f;
     [SerializeField] private float backToSignsDelay = 1.2f;
 
@@ -60,6 +67,7 @@ public class GameManager : MonoBehaviour
             entry.sign.OnClicked -= HandleSignClicked;
 
         CleanupWandsAndWater();
+        Cursor.visible = true;
     }
     private void Start()
     {
@@ -70,6 +78,10 @@ public class GameManager : MonoBehaviour
         activeEntry = null;
         CleanupWandsAndWater();
         glass.Hide();
+        Cursor.visible = true;
+
+        if (hintObject != null)
+            hintObject.SetActive(true);
 
         foreach (var entry in entries)
         {
@@ -82,6 +94,9 @@ public class GameManager : MonoBehaviour
     {
         var entry = entries.Find(e => e.sign == sign);
         if (entry == null) return;
+
+        if (hintObject != null)
+            hintObject.SetActive(false);
 
         foreach (var e in entries)
         {
@@ -96,10 +111,10 @@ public class GameManager : MonoBehaviour
         activeEntry = entry;
         entry.maze.gameObject.SetActive(true);
         entry.sign.gameObject.SetActive(false);
+        Cursor.visible = false;
 
         SpawnWandsAndWater(entry);
 
-        glass.ShowEmptyGlass();
         SetWandsControlEnabled(true);
         water.SetRising(true);
     }
@@ -116,6 +131,7 @@ public class GameManager : MonoBehaviour
         keyboardWandMover = keyboardWandInstance.GetComponent<KeyboardWandMover>();
         keyboardWand.Init(entry.maze.KeyboardSpawnPosition);
         keyboardWand.OnFailed += HandleFail;
+        keyboardWand.OnHitWall += HandleWallHit;
         keyboardWand.OnReachedGoal += HandleKeyboardReachedGoal;
 
         // --- Wand Mouse ---
@@ -124,6 +140,7 @@ public class GameManager : MonoBehaviour
         mouseWandMover = mouseWandInstance.GetComponent<MouseWandMover>();
         mouseWand.Init(entry.maze.MouseSpawnPosition);
         mouseWand.OnFailed += HandleFail;
+        mouseWand.OnHitWall += HandleWallHit;
         mouseWand.OnReachedGoal += HandleMouseReachedGoal;
 
         StartCoroutine(WarpMouseNextFrame(entry.maze.MouseSpawnPosition));
@@ -131,7 +148,7 @@ public class GameManager : MonoBehaviour
         // --- Water ---
         waterInstance = Instantiate(waterPrefab, waterParent);
         water = waterInstance.GetComponent<WaterLevel>();
-        water.Init(entry.maze.WaterBasePosition, waterRiseSpeed);
+        water.Init(new Vector3(0, entry.maze.WaterBasePosition.y, 0), waterRiseSpeed);
     }
     private IEnumerator WarpMouseNextFrame(Vector3 worldPosition)
     {
@@ -151,11 +168,13 @@ public class GameManager : MonoBehaviour
         if (keyboardWand != null)
         {
             keyboardWand.OnFailed -= HandleFail;
+            keyboardWand.OnHitWall -= HandleWallHit;
             keyboardWand.OnReachedGoal -= HandleKeyboardReachedGoal;
         }
         if (mouseWand != null)
         {
             mouseWand.OnFailed -= HandleFail;
+            mouseWand.OnHitWall -= HandleWallHit;
             mouseWand.OnReachedGoal -= HandleMouseReachedGoal;
         }
 
@@ -172,16 +191,23 @@ public class GameManager : MonoBehaviour
         keyboardWandMover = null;
         mouseWandMover = null;
     }
+    // Tocar el agua ya no reinicia el laberinto: se pierde ese trago y se
+    // sigue igual al minijuego de saborizantes (con la bebida base fallida).
     private void HandleFail()
     {
         SetWandsControlEnabled(false);
         if (water != null) water.SetRising(false);
-        Invoke(nameof(RetryActiveMaze), retryDelay);
+
+        activeEntry.maze.gameObject.SetActive(false);
+        CleanupWandsAndWater();
+        Invoke(nameof(GoToGlyphMinigame), retryDelay);
     }
-    private void RetryActiveMaze()
+
+    // Tocar una pared ya no reinicia el laberinto: solo vibra la cámara.
+    private void HandleWallHit()
     {
-        if (activeEntry == null) return;
-        StartMaze(activeEntry);
+        if (cameraShake != null)
+            cameraShake.Shake();
     }
     private void HandleKeyboardReachedGoal()
     {
@@ -209,11 +235,26 @@ public class GameManager : MonoBehaviour
 
         glass.PlayWinSequence(activeEntry.data.fullGlassSprite, OnWinSequenceFinished);
     }
+    // Se ganó el laberinto (bebida base lista): el flujo sigue en el
+    // minijuego de glifos para los saborizantes, no vuelve a los carteles.
     private void OnWinSequenceFinished()
     {
         activeEntry.maze.gameObject.SetActive(false);
         CleanupWandsAndWater();
-        Invoke(nameof(ShowSignSelection), backToSignsDelay);
+        Invoke(nameof(GoToGlyphMinigame), backToSignsDelay);
+    }
+
+    // Guarda qué vaso mostrar en el minijuego de glifos y cambia de escena.
+    // La usan tanto el camino de victoria como el de fallo (agua).
+    private void GoToGlyphMinigame()
+    {
+        if (activeEntry != null)
+        {
+            WandMinigameSession.SelectedGlassSprite = activeEntry.data.fullGlassSprite;
+            WandMinigameSession.SelectedLiquid = activeEntry.data;
+        }
+
+        SceneManager.LoadScene("Glyph Minigame");
     }
     private void SetWandsControlEnabled(bool value)
     {

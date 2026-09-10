@@ -10,6 +10,7 @@ public class GlassController : MonoBehaviour
     [SerializeField] private Sprite emptyGlassSprite;
     [SerializeField] private RectTransform sideAnchor;
     [SerializeField] private RectTransform centerAnchor;
+    [SerializeField] private GameObject hintGO;
 
     [Header("Config")]
     [SerializeField] private float appearDuration = 0.4f;
@@ -24,7 +25,6 @@ public class GlassController : MonoBehaviour
     {
         canvasGroup = GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0f;
-        glassRoot.localScale = Vector3.zero;
     }
     public void ShowEmptyGlass()
     {
