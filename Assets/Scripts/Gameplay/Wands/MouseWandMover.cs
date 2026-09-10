@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 public class MouseWandMover : MonoBehaviour
 {
     [SerializeField] private Camera cam;
+    [SerializeField] private float maxSpeed = 8f;
     [HideInInspector] public bool controlsEnabled = true;
 
     private Rigidbody2D rb;
@@ -20,7 +21,10 @@ public class MouseWandMover : MonoBehaviour
 
         Vector3 screenPos = mouse.position.ReadValue();
         screenPos.z = -cam.transform.position.z;
-        Vector2 worldPos = cam.ScreenToWorldPoint(screenPos);
-        rb.MovePosition(worldPos);
+        Vector2 targetPos = cam.ScreenToWorldPoint(screenPos);
+
+        Vector2 currentPos = rb.position;
+        Vector2 newPos = Vector2.MoveTowards(currentPos, targetPos, maxSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(newPos);
     }
 }
