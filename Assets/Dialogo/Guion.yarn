@@ -3,35 +3,39 @@ title: Start
 position: 546,-304
 ---
 <<CargarProgreso YarnComands>>
-
+<<desaparecerTutoGlifo YarnComands>>
+<<desaparecerTutoBebidas YarnComands>>
 <<osvaldoDesaparece YarnComands>>
-Entro al bar, mientras ve el interior escucha ruidos en la cocina y después de unos segundos aparece Osvaldo, su jefe.
+Cuando entras al bar, ves un lugar íntimo pero a la vez espacioso, con todas las sillas y mesas preparadas para ser usadas, pero donde aún está la paz de ser el primero en llegar.
+Intentas acostumbrarte al lugar cuando de la nada, aparece un sujeto que no reconoces pero por su actitud, notás que es el dueño del local y quien puso los letreros de “Se busca empleado”.
+Te acercas para hablar con él pero él se te adelanta con la primera palabra.
 <<osvaldoAparece YarnComands>>
-OSVALDO: Hola querido, un gusto que te hayas unido a el Bar de Osvaldo, bar n°1 en la región.
-OSVALDO: ¿como estas?
+OSVALDO: Hola querido, un gusto que te hayas unido a el Mystical Pub, bar n°1 en la región.
+OSVALDO: ¿Cómo estás?
 <<activarAuto YarnComands>>
-Todo bi
+- Todo bi
 <<desactivarAuto YarnComands>>
 OSVALDO: Que bien querido, me alegro.
-OSVALDO: ¿conoces el bar o es la primera vez que venis?
--> Si, ya vine un par de veces
-    OSVALDO: Perfecto, entonces no te tengo que explicar sobre la clientela habitual. Vamos atrás para que te muestre como funciona el equipo.
+OSVALDO: ¿Conoces el bar o es la primera vez que venís?
+-> Si, ya vine un par de veces.
+    OSVALDO: Perfecto, entonces no te tengo que explicar sobre la clientela habitual. Vamos atrás para que te muestre cómo funciona el equipo.
 ->No, lo conocí por el anuncio
-    OSVALDO: Bueno, entonces veni a la parte de atrás para que te muestre el equipo y de paso te explico un poco del local.
+    OSVALDO: Bueno, entonces vení a la parte de atrás para que te muestre el equipo y de paso te explico un poco del local.
+    Vas Osvaldo con atrás de la barra donde se encuentran contodo el sistema para preparar tragos.
     <<jump NoTutorial>>
+Vas Osvaldo con atrás de la barra donde se encuentran contodo el sistema para preparar tragos.
 <<jump inicioTuto>>
 ===
 title: NoTutorial
 position: 13,-198
 ---
-OSVALDO: Bueno, este es un bar especializado en atender monstruos, clientes peculiares.
-¿Y en qué se diferencian con los humanos?
-OSVALDO: En que los monstruos solo aceptan bebidas mágicas son un poco exigentes.
-¿Solo eso?
+OSVALDO: Bueno, este es un bar especializado en atender monstruos, clientes sobrenaturales.
+- ¿Y en qué se diferencian con los humanos?
+OSVALDO: En que los monstruos solo aceptan bebidas mágicas, son un poco exigentes.
+-¿Solo eso?
 OSVALDO: Y te van a comer si los haces enojar pero bueno, detalles nomas.
-...
-OSVALDO: Quedate tranquilo,la paga más que lo compensa y digamos que no tienes muchas opciones.
-OSVALDO: Ahora callate que te muestro como funciona el sistema.
+- ...
+OSVALDO: ¡Relájate querido, que yo confío en vos y tus habilidades!
 <<jump inicioTuto>>
 ===
 
@@ -39,52 +43,83 @@ title: inicioTuto
 position: 21,33
 ---
 OSVALDO: Bueno, el sistema es sencillo.
-OSVALDO: Básicamente para hacer un trago se divide en 3 etapas el líquido principal, los saborizantes y los adornos.
-OSVALDO: Todas las bebidas tienen un liquido principal pero no todas tienen saborizantes y adornos o incluso pueden tener más de uno de cada uno.
-OSVALDO: Este es el sistema para crear liquidos principales el sistema es sencillos, tienes que usar dos varitas mágicas.
-OSVALDO: Para que sea más sencillos deje unas guías para sepas que tenes qué hacer con cada mano para que salga el líquido que deseamos.
+OSVALDO: Básicamente para hacer un trago se divide en 2 etapas: El líquido principal y los saborizantes.
+OSVALDO: Todas las bebidas tienen un liquido principal pero no todas tienen saborizantes y adornos o incluso, pueden tener más de uno de cada uno.
+<<osvaldoDesaparece YarnComands>>
+<<osvaldoExplicacion YarnComands>>
+<<osvaldoAparece YarnComands>>
+<<tutoGlifo YarnComands>>
+OSVALDO: Este es el sistema para crear liquidos principales el sistema es sencillos.
+OSVALDO: El sistema es sencillo, tenés que usar dos varitas mágicas para invocar las distintas bebidas.
+OSVALDO: Por suerte, creé un sistema de guías de manera que solo tenés que seguir los caminos y saldrá el líquido que deseás.
+<<desaparecerTutoGlifo YarnComands>>
+<<tutoBebidas YarnComands>>
 OSVALDO: Este es el sistema de saborizantes, desafortunadamente para que los hechizos funcionen necesitamos una fuente de energía
 OSVALDO: por suerte las almas de libélulas astrales son perfectas para el trabajo.
-OSVALDO: Solo extermina a una libélula y dibuja el glifo de invocación para aparecer el saborizante que deseas
-OSVALDO: y como con los líquidos deje referencias para que te guies
+OSVALDO: Solo exterminá a una libélula y dibujá el glifo de invocación para aparecer el saborizante que querés.
+OSVALDO: Como con los líquidos, dejé referencias para que te guíes.
 OSVALDO: Eso es todo.
+<<desaparecerTutoBebidas YarnComands>>
+<<osvaldoDesaparece YarnComands>>
+<<osvaldoCentrado YarnComands>>
+<<osvaldoAparece YarnComands>>
 ->Creo que te entiendo.
     OSVALDO: Perfecto ¿qué te parece prepararme un trago? 
     OSVALDO: Así te acostumbras con las herramientas y yo no soy exigente, solo quiero un caramelo azul con menta polar.
 ->Te voy a ser sincero jefe, me perdí en monstruo.
-    OSVALDO: Me encantaría poder explicártelo de vuelta, pero no tenemos mucho tiempo y quiero que pruebes las máquinas. 
-    OSVALDO: Porque mejor no me haces un trago y intentas acordarte a la marcha. 
+    OSVALDO: Me encantaría poder explicártelo de vuelta pero no tenemos mucho tiempo y quiero que pruebes las máquinas. 
+    OSVALDO: ¿Porque mejor no me haces un trago y intentas acordarte a la marcha?
     OSVALDO: Solo quiero un caramelo azul con menta polar, y quedate tranquilo si te equivocas que es para aprender.
+<<CambiarPersonaje YarnComands 4>>
+<<GuardarProgreso YarnComands>>
+<<irAlMinijuego YarnComands "osvaldo_reaccion">>
+===
+title: osvaldo_reaccion
+---
+<<osvaldoAparece YarnComands>>
+<<if resultadoMiniJuego()>>
+    OSVALDO: Bueno, veo que le entendiste la mano.
+    OSVALDO: Prepárate porque ahora abrimos, yo me voy un rato que tengo cosas que hacer. 
+    OSVALDO: En unas horas vuelvo.
+<<else>>
+    OSVALDO: Ugh horribl... quise decir que había cosas para mejorar.
+    OSVALDO: Me tengo que ir un par de horas, quedate tranquilo yo confío que vos podes. 
+    OSVALDO: Pero la proxima intenta recordar lo que te pidio el cliente.
+<<endif>>
 <<osvaldoDesaparece YarnComands>>
+Osvaldo se oculta debajo del mostrador pero cuando lo intentas buscar, simplemente no hay rastro de él. 
+Supones que debe ser una puerta secreta pero una muy buena ya que no dejó ningún rastro.
 <<jump tartu>>
 ===
-
 title: tartu
 position: 21,33
 ---
-Luego de atender a los primeros clientes y cuando te empiezas a poner cómodo en el local, escuchas unos ruidos fuertes en la puerta y de la nada vez una figura grande enfrente tuyo
+Luego de atender a los primeros clientes del día y de ponerte más cómodo en el local, de la nada, empezás a sentir unos temblores en el piso, pero no tan fuertes para ser un sismo. 
+Poco a poco, distinguís que viene de un cliente cuando en la puerta aparece una sombra del tamaño de un camión, pero de forma humanoide. 
+Cuando abre la puerta lo ves.
+Un gigante que camina directo a la barra, haciendo un alboroto con sus pasos, pero sin romper nada.
+<<CambiarPersonaje YarnComands 0>>
 <<GuardarProgreso YarnComands>>
 <<tartuAparece YarnComands>>
 TARTU: Hola.
-Hola ¿que se te ofrece algo?
+- Hola, ¿Qué se te ofrece?
 TARTU: ...
-¿Todo Bien?
-TARTU: Libélulas
-¿Qué?
-TARTU: Libélulas, Odio a las libélulas
-¿Las libélulas astrales? Esan son para hacer los tragos
-TARTU: Quiero que mates todas las libélulas
+- ¿Todo Bien?
+TARTU: Libélulas.
+- ¿Qué?
+TARTU: Libélulas, odio a las libélulas.
+- ¿Las libélulas astrales? Esan son para hacer los tragos.
+TARTU: Quiero que mates todas las libélulas.
 ->Creo que te entiendo.
     TARTU: Tome el dinero, son criaturas malignas.
 ->No puedo matarlas porque si
     <<tartuDesaparece YarnComands>>
     <<tartuEAparece YarnComands>>
-    TARTU: ¿Acaso estás defendiendo a esas criaturas?
-    Tranquilo, tranquilo. ahora veo lo que puedo hacer
+    TARTU: ¿Acaso tú defender criatura horrible?
+    - Tranquilo, tranquilo. ahora veo lo que puedo hacer
     <<tartuEDesaparece YarnComands>>
     <<tartuAparece YarnComands>>
-    TARTU: Aquí tiene el dinero, ahora matelas.
-
+    TARTU: Aquí tiene dinero, ahora mátelas.
 <<irAlMinijuego YarnComands "tartu_reaccion">>
 ===
 
@@ -94,7 +129,7 @@ position: 21,33
 <<tartuAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     TARTU: Buen trago, quiero otro.
-    Tienes para pagarme
+    - Primero tenés que pagar.
     <<tartuDesaparece YarnComands>>
     <<tartuEAparece YarnComands>>
     TARTU: Quiero otro trago, matalas de una vez.
@@ -102,17 +137,20 @@ position: 21,33
         <<tartuEDesaparece YarnComands>>
         <<tartuAparece YarnComands>>
         TARTU: Ejeje caerle bien a Tartu, voy a torturar a criatura maligna a otro lado.
-    ->Si querés otro trago tenes que pagar, si no le tengo que avisar a mi jefe
+    ->Si querés otro trago tenes que pagar. Si no, le tengo que avisar a mi jefe.
         <<tartuEDesaparece YarnComands>>
         <<tartuAparece YarnComands>>
-        TARTU: No, No, está bien, Osvaldo castigar a Tartu la última vez. Mañana traigo más dinero.
+        TARTU: ¡No, No! está bien. 
+        TARTU: Osvaldo castigó a Tartu la última vez.
+        TARTU: Mañana traigo más dinero.
+        - Gracias, vuelva pronto.
 <<else>>
     <<tartuDesaparece YarnComands>>
+    TARTU: ¿Defender libélulas? Creo que aparte de comer libélulas...
     <<tartuEAparece YarnComands>>
-    TARTU: ¿Así que las defiendes? creo que aparte de comer libélulas te comere a ti
+     TARTU: ¡Te comeré a ti!
     <<gameOver YarnComands>>
 <<endif>>
-Gracias, vuelva pronto
 <<tartuDesaparece YarnComands>>
 <<jump osvaldo2>>
 ===
@@ -121,41 +159,48 @@ title: osvaldo2
 position: 21,33
 ---
 <<fondoTarde YarnComands>>
-Luego de atender a Tartu, avanza un poco el dia y aparece Osvaldo por la puerta de adelante.
+Tartu se retira de manera brusca y torpe pero por suerte no daña ningún objeto. 
+Al poco tiempo mientras estabas distraído terminando de servirle a alguien, aparece Osvaldo sin ningún aviso delante tuyo y empieza a hablarte antes de que siquiera puedas asustarte.
 <<osvaldoAparece YarnComands>>
 OSVALDO: ¡Hola querido!
-¿Cómo te estás manejando?
+OSVALDO: ¿Cómo te estás manejando?
 <<activarAuto YarnComands>>
-Creo que le estoy agarrando la ma
+- Creo que me las estoy arregl
 <<desactivarAuto YarnComands>>
-OSVALDO: Que bien, me contaron cómo trataste con Tartu. A veces es un poco intimidante pero el conoce su lugar. Además siempre que le des libélulas él te va a querer.
-OSVALDO: Bueno ¿Qué otra cosa te iba a decir?
-OSVALDO: No me acuerdo, no sera algo importante.
-OSVALDO: igual ahora me voy y no vuelvo hasta la noche, tengo que irme a correr una maratón
-OSVALDO: te veo en unas horas, chiao.
+OSVALDO: ¡Qué bien! me contaron cómo trataste con Tartu.
+OSVALDO: A veces es un poco intimidante pero él conoce su lugar.
+OSVALDO: Además, siempre que le mates alguna libélula te va a querer.
+Pensas en como esa data te hubiera servido un poco antes.
+OSVALDO: Bueno, ¿Qué otra cosa te iba a decir?
+Osvaldo se queda mirando a la nada por unos segundos.
+OSVALDO: Ah, ahí me acordé, mira que hoy a la noche va a venir una clienta muy meticulosa, así que te recomiendo que le agarres la mano para entonces.
+<<activarAuto YarnComands>>
+- ¿Eh? Pero si
+<<desactivarAuto YarnComands>>
+OSVALDO: Ahora tengo que irme a correr una maratón te veo en unas horas, ciao.
 <<osvaldoDesaparece YarnComands>>
+Osvaldo sale corriendo por la puerta del local, como si el Maratón hubiera empezado en ese mismo instante o peor aún, que el Maratón ya esté en curso y el decidiera tener una mini parada para hablarte.
 <<jump kerita>>
 ===
 
 title: kerita
 position: 21,33
 ---
-<<CambiarPersonaje YarnComands 1>>
-El día sigue avanzando, ahora es un poco más tarde y el sol ya se empieza a ocultar cuando de la nada la puerta se abre de golpe y entra una joven de manera bruta.
-<<GuardarProgreso YarnComands>>
 <<fondoTarde YarnComands>>
+<<CambiarPersonaje YarnComands 1>>
+El día sigue avanzando, ahora es un poco más tarde y el sol ya se empieza a ocultar cuando de la nada, la puerta se abre de golpe y logras distinguir a una joven que parece llevarse el mundo por delante. 
+Después de empujar a un par de personas y culparlas después de meterse en su camino, finalmente llega a la barra.
 <<keritaAparece YarnComands>>
-KERITA: EY EY, Tengo sed.
-¿Disculpe?
+KERITA: ¡Ey, Ey! Tengo sed.
+- ¿Disculpe?
 KERITA: Lo que dije, dame algo de tomar.
-Hola, buen dia. ¿Qué bebida se le ofrece?
-KERITA: Muchas formalidades, quiero algo fuerte
+- Hola, buen dia. ¿Qué bebida se le ofrece?
+KERITA: Muchas formalidades, ¡quiero algo fuerte!
 ->Está bien, ahí te lo preparo
-    KERITA: Muchas gracias compa, te pido también que tenga cereza humeante
+    KERITA: Muchas gracias compa, te pido también que tenga cereza humeante que me quiero dar el gusto.
 ->¿Solo que sea fuerte, no queres agregar nada más?
-    KERITA: Uy si que tenes muchos modales, una bebida fuerte con cereza humeante
-    KERITA: Quedate tranquilo que si haces lo que te pido voy a hablarle bien a Osvaldo.
-
+    KERITA: ¡Uy sí! una bebida fuerte con cereza humeante.
+    KERITA: El resto queda en tu imaginación y quedate tranquilo que si haces lo que te pido, voy a hablarle bien a Osvaldo.
 <<irAlMinijuego YarnComands "kerita_reaccion">>
 ===
 
@@ -165,32 +210,33 @@ position: 21,33
 <<fondoTarde YarnComands>>
 <<keritaAparece YarnComands>>
 <<if resultadoMiniJuego()>>
-    KERITA: Esto es lo que queria, muchas gracias compa.
+    KERITA: Esto es lo que quería, ¡Gracias!
 <<else>>
-    KERITA: Ugh que asco ¿acaso te hiciste gracioso conmigo?
+    KERITA: Ugh, que asco ¿Acaso te querés hacer el gracioso conmigo? 
     <<keritaDesaparece YarnComands>>
     <<keritaEAparece YarnComands>>
-    KERITA: ahora te voy a enseñar graciosito.
+    KERITA: Ahora te voy a enseñar un poco de comedia...
     <<gameOver YarnComands>>
 <<endif>>
-Me alegro que te guste
-KERITA: Raro ver a gente de tu estilo en un lugar como este
+- Me alegro que te guste
+KERITA: Raro ver a gente de tu estilo en un lugar como este.
 KERITA: ¿Que te trajo a un bar de monstruos?
 ->Siempre los encontré interesantes y quería conocer un poco más de ustedes.
-    KERITA: Ah ¿con que te parecemos interesantes?
+    KERITA: Ah, ¿Con que te parecemos interesantes?
     <<keritaDesaparece YarnComands>>
     <<keritaEAparece YarnComands>>
-    KERITA: ¿que tan interesante te parezco ahora?
-    No para, no me refería de modo burlón
+    KERITA: ¿Que tan interesante te parezco ahora?
+    - No para, no me refería de modo burlón.
     <<keritaEDesaparece YarnComands>>
     <<keritaAparece YarnComands>>
-    KERITA: CAISTE, jajaja siempre es divertido asustarlos.
-    . . .
-    KERITA: Ehh no te lo tomes tan a mal jaja que fue solo una joda.
-->Te soy sincero, no me entere que era un bar de monstruos hasta que ya estaba aca atras
+    KERITA: ¡CAISTE! Jajaja, siempre es divertido asustarlos.
+    -. . .
+    KERITA: Ehh, ¡no te lo tomes tan a mal! jaja, ¡fue solo una joda!
+->Te soy sincero, no me entere que era un bar de monstruos hasta que ya estaba atrás de la barra.
     KERITA: JAJAJAJA Osvaldo se metió en esto sin contarte nada, un tipazo.
-KERITA: Me caes bien, espero que la próxima vez que venga sigas aquí y no en el estómago de alguien. 
-KERITA: Chau.
+KERITA: Me caes bien, espero que la próxima vez que venga, sigas acá y no en el estómago de alguien. 
+
+KERITA: Chauu.
 <<keritaDesaparece YarnComands>>
 <<jump fue>>
 ===
@@ -198,20 +244,20 @@ KERITA: Chau.
 title: fue
 position: 21,33
 ---
+<<fondoTarde YarnComands>>
 <<CambiarPersonaje YarnComands 2>>
-Poco después de que se fuera Kerita, aparece un señor que intenta caminar con un poco de cuidado evitando tocar cualquier objeto.
-cuando llega a la barra.
+Poco después de que se fuera Kerita, aparece un señor que intenta caminar con cuidado. 
+Como evitando tocar nada, poco a poco avanzó hasta la barra esquivando todo lo que se le cruzó.
 <<fueAparece YarnComands>>
-Buenos días, que se le ofrece.
-FUE:Si, eh, quiero uuuuuuun (ruido inteligible) 
-¿Disculpe me lo puede repetir?
-FUE: Quiero un agrio(inteligible) con fuego co(inteligible) y (inteligible) icante.
-->Entendido
+- Buenos días, que se le ofrece.
+FUE: Si, eh, quiero uuuuuuun (ruido inteligible).
+- ¿Disculpe me lo puede repetir?
+FUE: Quiero un agri(inteligible)illo con fuego co(inteligible) y (inteligible) icante.
+->Entendido.
     FUE: Gracias.
-->¿Disculpa me lo puedes repetir otra vez?
+->Disculpa, ¿Me lo puedes repetir otra vez?
     FUE: ...
-    Bueno, veo lo que te puedo hacer.
-
+    - Bueno, veo lo que te puedo hacer.
 <<irAlMinijuego YarnComands "fue_reaccion">>
 ===
 
@@ -222,32 +268,34 @@ position: 21,33
 <<fondoTarde YarnComands>>
 <<fueAparece YarnComands>>
 <<if resultadoMiniJuego()>>
-    FUE: ah esta bueno
+    FUE: Ah, esto es lo que quería, gracias.
 <<else>>
-    FUE: ugh no me siento muy bien
+    FUE: Ugh, no me siento muy bien...
     <<fueDesaparece YarnComands>>
     <<fueEAparece YarnComands>>
-    Fue pierde el control y quema el local
+    FUE Quema el local debido a perder el control de sí mismo.
     <<gameOver YarnComands>>
 <<endif>>
-Che amigo, creo que te tenes que relajarte un poco. no te voy a comer
-FUE: Ya lo sé, es solo que no sé.
-FUE: Como tengo que ser cuidadoso todo el tiempo para no quemar nada tengo miedo a cagarla.
-->Cagar que si es solo pedir una bebida, no te persigas
-    FUE: gracias, supongo que tenía que escuchar eso.
-->Y pero yo necesito saber qué hacer. poniéndote nervioso termina afectando más que ayudandote.
+- Che amigo, creo que te tenes que relajarte un poco, no te voy a comer
+FUE: Ya lo sé, es solo que... 
+FUE: No sé.
+FUE: Como tengo que ser cuidadoso todo el tiempo para no quemar nada, tengo miedo a cagarla.
+->¿Cagar qué? Si es solo pedir una bebida, no te persigás.
+    FUE: Gracias, supongo que tenía que escuchar eso.
+->Y… pero yo necesito saber qué hacer. Ponerte nervioso y no hablar claro te termina afectando más de lo que te ayuda.
     FUE: Es que desde siempre me pasa, estoy intentando trabajar pero me toma esfuerzo.
-No tengo estudios de psicologia pero personalmente te recomiendo que cuando vengas a un lugar como este
-vengas con la mentalidad completamente centrada en relajarte.
-Mira hasta hay un espacio en la barra que no es de madera para que puedas relajarte tranquilo.
-FUE: Si, Osvaldo la hizo para mi. siempre me olvido que esta ahí. Siempre fue bueno conmigo.
-Luego de una charla larga donde poco a poco FUE se sentia mas comodo se levantó.
+-No tengo estudios de psicología pero personalmente te recomiendo que cuando vengas a un lugar como este...
+- Tengas la mente completamente centrada en relajarte.
+- Mira, hasta hay asiento que no es de madera para que puedas estar tranquilo.
+FUE: Si, Osvaldo la hizo para mí...Siempre me olvido de ese espacio.
+FUE: Él siempre fue bueno conmigo, me ayudó mucho.
+Luego de una larga charla donde poco a poco, FUE se iba sintiendo más cómodo, se levantó.
 FUE: Se está haciendo tarde, se van a preocupar si no vuelvo pronto. 
-FUE: fue un placer hasta luego y perdón por las molestias
-->Chau, y deja de pedir perdón
-    FUE: perdón es la costumbre.
-->Que te vaya bien y tene cuidado
-    FUE: gracias.
+FUE: Fue un placer, hasta luego y perdón por las molestias.
+->Deja de pedir perdón por todo, nos vemos.
+    FUE: Perdón, es la costumbre.
+->Que te vaya bien y tené cuidado.
+    FUE: Gracias.
 <<fueDesaparece YarnComands>>
 <<jump osvaldo3>>
 ===
@@ -258,36 +306,47 @@ position: 21,33
 <<fondoNoche YarnComands>>
 Ya se hizo de noche, tu primer día está terminando y dentro de poco podrás volver a casa cuando de la nada vuelve a aparecer Osvaldo se le nota un poco agotado de la maratón pero con la misma actitud de siempre.
 <<osvaldoAparece YarnComands>>
-OSVALDO: Hola querido ¿cómo está todo?
-Todo bien por ahora ¿Como te fue en la Maratón?
-OSVALDO: Podes creer que yo estaba re contento, primero sin nadie cerca para desafiarme 
-OSVALDO: y cuando hago la última curva para llegar a la meta veo que me equivoque de lugar y que era para el otro lado.
-Nooo y que hiciste
-OSVALDO: Y, fui lo mas rapido que pude a la meta y cuando llegué ya estaban dando las medallas, terminé 37 de 70.
-Tampoco tan mal ¿que paso con los demás que llegaron después que vos?
-OSVALDO: Y algunos era su primera Maratón y el cuerpo no les daba
-OSVALDO: Tambien hubo como 28 que se los comio un Kraken cuando pasaron por el puerto.
-¿Como?
-OSVALDO: Si, muy grande el Kraken pero por suerte cuando yo pase por el puerto estaba ocupado intentando comerse un carguero.
-OSVALDO: Cambiando de tema, está por terminar tu día.
-Si, clientes peculiares tenes.
-OSVALDO: Los mejores, la mejor parte es que me pagan.
-OSVALDO: Pero escuchame bien, ahora a la noche a veces viene una clienta un poco estricta.
-¿A qué te referis?
-OSVALDO: No quiero decir su nombre porque es mal augurio pero digamos que si arruinas una sola cosa de su trago… 
+OSVALDO: Hola querido, ¿Cómo está todo?
+- Todo bien por ahora, ¿Como te fue en la Maratón?
+OSVALDO: ¿Podes creer? yo estaba re contento, primero, sin nadie cerca para desafiarme.
+OSVALDO: Y cuando hago la última curva para llegar a la meta, veo que me equivoque de lugar y que era para el otro lado.
+- ¡Nooo! ¿Y qué hiciste?
+OSVALDO: Y… Fui lo más rápido que pude a la meta. 
+OSVALDO: Pero cuando llegué, ya estaban dando las medallas.
+OSVALDO: Terminé 37 de 70.
+-Tampoco tan mal, ¿Qué pasó con los demás que llegaron después que vos?
+OSVALDO: Para algunos era su primera Maratón y el cuerpo no les daba.
+OSVALDO: También hubo como 28 que se los comió un Kraken cuando pasaron por el puerto.
+- ¿C-Como?
+OSVALDO: Si, muy grande el Kraken pero por suerte cuando yo pase por el puerto estaba, ocupado intentando comerse un carguero.
+OSVALDO: Cambiando de tema, ¡está por terminar tu día!
+- Si, clientes peculiares tenés.
+OSVALDO: Los mejores, la mejor parte es que me dejan linda propina.
+OSVALDO: Pero escuchame bien, ahora a la noche a veces viene una clienta un poco... 
+OSVALDO: Estricta.
+- ¿A qué te referis?
+OSVALDO: No quiero decir su nombre porque es mal augurio pero...
+OSVALDO: Digamos que si arruinas una sola cosa de su trago...
 OSVALDO: fue un gusto conocerte.
-¿Y cómo permitís que siga viniendo acá?
-OSVALDO: ¿Y que se enoje conmigo? No gracias.
-OSVALDO: igual tranquilizate que por suerte siempre pide lo mismo
-¿Y eso es?
-OSVALDO: El gran Osvaldo, un trago que lleva amargo verde, anís eléctrico y ehhh, no me acuerdo.
-Pero si es tu trago ¿Como te podes olvidar algo que inventaste?
-OSVALDO: Yo no lo inventé, ese fue mi hermano
-que también se llamaba Osvaldo. 
+- ¿Y cómo permitís que siga viniendo acá?
+OSVALDO: ¿Y que se enoje conmigo?
+OSVALDO: ¡No gracias!
+OSVALDO: Igual tranqui que por suerte, siempre pide lo mismo.
+- ¿Y eso es...?
+<<activarAuto YarnComands>>
+OSVALDO: ¡El Gran Osvaldo! un trago que lleva amargo verde, anís eléctrico y
+<<desactivarAuto YarnComands>>
+OSVALDO: ehhh...
+OSVALDO: No me acuerdo.
+- Pero si es tu trago, ¿Cómo te podes olvidar algo que inventaste?
+OSVALDO: Yo no lo inventé, ese fue mi hermano…
+OSVALDO: Que también se llamaba Osvaldo. 
+OSVALDO: Mirá, cualquier cosa preguntale y capaz te pueda ayudar o te dé una pista.
 OSVALDO: Mira cualquier cosa preguntale y te pueda ayudar o te de una pista.
-Si no me come antes.
-OSVALDO: Disculpame querido estoy muy cansado ahora y necesito tirarme un rato, vuelvo para el cierre chau.
-Osvaldo tira una bomba de humo como si fuera un ninja pero cuando el humo se despeja aún puedes ver como se termina de meter en la parte de atrás, esperemos que no aparezca.
+- Si no me come antes.
+OSVALDO: Disculpame querido, estoy muy cansado ahora y necesito tirarme un rato, vuelvo para el cierre, ¡espero verte con vida!
+Osvaldo tira una bomba de humo como si fuera un ninja pero cuando el humo se despeja, aún podes ver como se termina de meter en la parte de atrás. 
+Esperemos que no aparezca la clienta a la que se refiere.
 <<osvaldoDesaparece YarnComands>>
 <<jump naima>>
 ===
@@ -297,27 +356,27 @@ position: 21,33
 ---
 <<fondoNoche YarnComands>>
 <<CambiarPersonaje YarnComands 3>>
-15 minutos antes de cerrar, tus nervios y miedo no pueden mas y vez como las últimas personas también se preparan lentamente para irse cuando de la nada escuchas la puerta y la vez. 
-Sabes en el instante que es ella.
+15 minutos antes de cerrar, tus nervios y miedo no pueden más y observas como las últimas personas también se preparan lentamente para irse cuando de la nada, escuchas la puerta y la ves… Sabes al instante que es ella.
 <<GuardarProgreso YarnComands>>
 <<fondoNoche YarnComands>>
 <<naimaAparece YarnComands>>
-NAIMA: ¿Que en este establecimiento se perdió la cortesía de saludar a una señora al entrar?
+NAIMA: ¿Qué? ¿Acaso en este establecimiento se perdió la cortesía de saludar a una dama al entrar?
 <<activarAuto YarnComands>>
-Bueno dia…
+- B-Buenos dí
 <<desactivarAuto YarnComands>>
-NAIMA: Es de noche, aunque viendo tu cara tampoco parece un bar siendo que pareces un vagabundo de la calle.
-->Voy a ignorar eso ¿que se le ofrece?
-    NAIMA: Que también en este local no hay memoria. acaso uno tiene que hacer todo el trabajo
-->Tenes razón un poco incivilizado de mi parte ¿que se le ofrece?
-    NAIMA: Puedo ver que lo de incivilizado aún no se le pasó. quiero lo mismo de siempre.
-
+NAIMA: Es de noche, aunque viendo su cara, esto tampoco parece un bar ya que parece usted un vagabundo de la calle.
+->Voy a ignorar eso, ¿Qué se le ofrece?
+    NAIMA: ¿Qué? ¿Este local también carece de memoria? Usted espera que los clientes hagan todo el trabajo.
+    NAIMA: ¡Qué vergüenza!
+->Tenés razón, un poco incivilizado de mi parte. ¿Qué se le ofrece?
+    NAIMA: Puedo ver que la incivilización aún no se le pasó... 
+    NAIMA: Sírvame lo mismo de siempre.
 ->Ya se lo preparo.
-    NAIMA: Espero que no tenga el descaro de tardar como lo hacía el anterior, que mi tiempo es valioso y ese sabor humeante es la única razón por la que no clausure el lugar.
+    NAIMA: Espero que no tenga el descaro de tardar como lo hacía el anterior, mi tiempo es valioso y ese sabor humeante es la única razón por la que no clausuré el lugar.
 ->Disculpe las molestias pero este es mi primer día, no se cual es su trago.
-    NAIMA: Ugh caballero de esto me quejaré con su jefe. Es un gran Osvaldo.
-    NAIMA: Su jefe tendrá un lugar decadente pero ese sabor humeante es de las pocas cosas destacables.
-
+    NAIMA: Ugh, de esto me quejaré con su jefe.
+    NAIMA: Quiero un Gran Osvaldo.
+    NAIMA: El dueño tendrá un lugar decadente, pero ese sabor humeante es de las pocas cosas destacables.
 <<irAlMinijuego YarnComands "naima_reaccion">>
 ===
 
@@ -327,17 +386,20 @@ position: 21,33
 <<fondoNoche YarnComands>>
 <<naimaAparece YarnComands>>
 <<if resultadoMiniJuego()>>
-    NAIMA: umm aceptable. puedes ser un poco despistado pero tienes talento, no lo puedo negar joven.
+    NAIMA: Mmm... aceptable.
+    NAIMA:Puede ser un poco despistado, pero nopuedo negar que tienetalento, joven.
 <<else>>
-    NAIMA: Espero que esta blasfemia a la que llamas trago haya sido un chiste.
+    NAIMA: Espero que esta blasfemia a la que llamas trago haya sido una equivocación.
     <<naimaDesaparece YarnComands>>
     <<naimaEAparece YarnComands>>
-    NAIMA: lamentablemente no tengo mucho sentido del humor
+    NAIMA: Lamentablemente, no tengo tiempo para errores.
     <<gameOver YarnComands>>
 <<endif>>
-Agradezco sus palabras.
-NAIMA: Bueno joven, ya es tarde y tengo que volver a mis aposentos pero mañana voy a volver y espero que para esta vez recuerde que tiene que servir
-Sí señora.
+- Agradezco sus palabras.
+NAIMA: Bueno, joven, ya es tarde y tengo que volver a mis aposentos. 
+NAIMA: No olvide que mañana voy a volver y espero que para esta vez. 
+NAIMA: Recuerde correctamente lo que tiene que servir...
+- Sí, señora.
 <<naimaDesaparece YarnComands>>
 <<jump final>>
 ===
@@ -345,15 +407,25 @@ Sí señora.
 title: final
 position: 21,33
 ---
-Naima se retira y el aire en el local se vuelve mucho más ligero en ese preciso momento. Unos minutos más tarde vuelve Osvaldo para empezar a cerrar.
+Naima se retira y el aire en el local se vuelve mucho más ligero en ese preciso momento.
+Unos minutos más tarde vuelve Osvaldo para empezar a cerrar.
 <<osvaldoAparece YarnComands>>
-OSVALDO: Bueno, felicidades por pasar tu primer dia.
-Te juro que creí no contarla
-OSVALDO: Un amor Naima viste, bueno ahora ayúdame a cerrar y ya te podes ir a tu casa.
-OSVALDO: Mañana Tartu y Fue no suelen venir por trabajo pero tal vez conoscas a…
-Sabes que no me lo cuentes, quiero conocerlos en el momento.
-OSVALDO: Esa es la actitud, ahora vamos a levantar las sillas.
-Levantas las sillas con OSVALDO, limpias un poco y te vas sabiendo que nada va a ser tan estresante como este primer dia.
+OSVALDO: No puedo creerlo, ¡sobreviviste!
+- ¿Cómo que no lo podes creer?
+OSVALDO: Te soy sincero, ya estaba buscando tu reemplazo pero, ¡lo lograste!
+- Creo que no doy más, pero necesito el dinero.
+OSVALDO: Quedate tranquilo que yo pago bien, acá tenés.
+Osvaldo te pasa una cantidad de dinero que creíste solo poder ver si robabas un banco.
+- Tenés razón, la paga sí que lo compensa.
+OSVALDO: Sí, te dije. 
+<<activarAuto YarnComands>>
+OSVALDO: Mira que mañana Tartu y Fue no suelen venir pero va a venir un tipazo que se llam
+<<desactivarAuto YarnComands>>
+- No me cuentes, quiero que sea una sorpresa para mañana.
 <<osvaldoDesaparece YarnComands>>
+Y así, con Osvaldo cerramos el local. 
+Antes de tomar caminos opuestos, nos despedimos con una sonrisa; sabiendo que a partir de ahora.
+no solo trabajaríamos juntos, sino que también, seríamos buenos compañeros.
+Al final del día, más allá de los sustos y las complicaciones del camino, conocer gente y aprender cosas nuevas... Siempre es mágico.
 <<mostrarFinal YarnComands>>
 ===

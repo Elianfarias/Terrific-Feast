@@ -9,6 +9,7 @@ using Yarn.Unity;
 
 public class YarnComands : MonoBehaviour
 {
+    private Vector2 posOriginalOsvaldo;
     public DialogueRunner dialogueRunner;
     //info para guardar 
     [SerializeField] private GameStateProgress data;
@@ -30,6 +31,9 @@ public class YarnComands : MonoBehaviour
     [SerializeField] private RawImage fondoNoche;
     //LinePresenter es la clase que representa el sistema que genera el texto en pantalla
     [SerializeField] private LinePresenter linePresenter;
+    //imagenes del tutuorial
+    [SerializeField] private RawImage TutoGli;
+    [SerializeField] private RawImage TutoBebidas;
     //Game Over
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private CanvasGroup gameOverGroup;
@@ -39,9 +43,11 @@ public class YarnComands : MonoBehaviour
     //Final del juego
     [SerializeField] private GameObject endPanel;
     [SerializeField] private AudioClip endSound;
+
+   
     //------------------------------------Lista de comandos-------------------------------------
     public void Awake()
-    {
+    { 
         dialogueRunner.AddFunction("personajeActual",GetActiveChar);
         dialogueRunner.AddFunction("resultadoMiniJuego",GetMiniGameResult);
         dialogueRunner.AddFunction("afectoKerita",afectoKerita);
@@ -174,6 +180,21 @@ public class YarnComands : MonoBehaviour
         osvaldo.enabled=false;
     }
 
+    [YarnCommand("osvaldoExplicacion")]
+    public void OsvaldoExplicacion()
+    {
+        RectTransform rect = osvaldo.GetComponent<RectTransform>();
+        posOriginalOsvaldo = rect.anchoredPosition;
+        rect.anchoredPosition = new Vector2(-500,rect.anchoredPosition.y);
+    }
+
+    [YarnCommand("osvaldoCentrado")]
+    public void OsvaldoCentrado()
+    {
+        osvaldo.GetComponent<RectTransform>().anchoredPosition = posOriginalOsvaldo;
+    }
+        
+
     [YarnCommand("tartuAparece")]
     public void TartuAparece()
     {
@@ -269,6 +290,32 @@ public class YarnComands : MonoBehaviour
     {
         Naima_Enojado.enabled = false;
     }
+
+    // Visuales del tutorial
+    [YarnCommand("tutoGlifo")]
+    public void TutoGlifo()
+    {
+        TutoGli.gameObject.SetActive(true);
+    }  
+
+    [YarnCommand("desaparecerTutoGlifo")]
+    public void DesaparecerTutoGifo()
+    {
+        TutoGli.gameObject.SetActive(false);
+    }  
+
+        [YarnCommand("tutoBebidas")]
+    public void TutorialBebidas()
+    {
+        TutoBebidas.gameObject.SetActive(true);
+    }  
+
+    [YarnCommand("desaparecerTutoBebidas")]
+    public void desaparecerTutoBebidas()
+    {
+        TutoBebidas.gameObject.SetActive(false);
+    }  
+
 
     // nodoRegreso: nodo de Yarn donde hay que continuar la novela visual
     // cuando se termine todo el flujo del trago (ej: "tartu_reaccion").

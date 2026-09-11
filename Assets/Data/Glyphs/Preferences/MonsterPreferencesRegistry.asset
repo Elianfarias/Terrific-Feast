@@ -21,3 +21,5 @@ MonoBehaviour:
     preferences: {fileID: 11400000, guid: 6cbf94d88d164ee6bf7b8fe98cb0ab30, type: 2}
   - monsterId: Naima
     preferences: {fileID: 11400000, guid: 69ef84a7379d4dae905a3d2310b22e39, type: 2}
+  - monsterId: Osvaldo
+    preferences: {fileID: 11400000, guid: fda5c56cf5e46d44f85e5f681482410f, type: 2}
