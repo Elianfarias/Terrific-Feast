@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // Controla el panel de tutorial: se abre automáticamente la primera vez que
 // se entra al minijuego y después queda disponible desde el botón de ayuda.
 public class TutorialPanelController : MonoBehaviour
 {
-    private const string TutorialSeenKey = "GlyphMinigame.TutorialPanel.Seen";
+    private const string TutorialSeenKeyPrefix = "TutorialPanel.Seen.";
+
+    private string TutorialSeenKey =>
+        TutorialSeenKeyPrefix + SceneManager.GetActiveScene().name;
 
     [Serializable]
     private class TutorialPage
