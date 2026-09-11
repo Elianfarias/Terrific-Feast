@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Controla el panel de tutorial: arranca oculto, un botón lo abre y va
-// pasando de página en página con "Continuar" hasta cerrarse solo.
+// Controla el panel de tutorial: se abre automáticamente la primera vez que
+// se entra al minijuego y después queda disponible desde el botón de ayuda.
 public class TutorialPanelController : MonoBehaviour
 {
+    private const string TutorialSeenKey = "GlyphMinigame.TutorialPanel.Seen";
+
     [Serializable]
     private class TutorialPage
     {
@@ -18,6 +20,7 @@ public class TutorialPanelController : MonoBehaviour
     [SerializeField] private Text titleText;
     [SerializeField] private Text bodyText;
     [SerializeField] private GameObject nextButtonRoot;
+    [SerializeField] private bool showAutomaticallyOnFirstEntry = true;
 
     [SerializeField]
     private List<TutorialPage> pages = new List<TutorialPage>
@@ -47,9 +50,26 @@ public class TutorialPanelController : MonoBehaviour
 
     private int pageIndex;
 
-    // Nada de ocultar acá: panelRoot es este mismo GameObject, así que
-    // desactivarlo en Awake (disparado por su propia primera activación)
-    // la cancelaba en el momento. Que arranque inactivo lo resuelve la escena.
+    private void Awake()
+    {
+        if (!showAutomaticallyOnFirstEntry)
+        {
+            Hide();
+            return;
+        }
+
+        if (PlayerPrefs.GetInt(TutorialSeenKey, 0) == 0)
+        {
+            Show();
+            PlayerPrefs.SetInt(TutorialSeenKey, 1);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            Hide();
+        }
+    }
+
     public void Show()
     {
         panelRoot.SetActive(true);

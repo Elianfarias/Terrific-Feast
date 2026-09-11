@@ -730,7 +730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4371887240893657699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -805,6 +805,7 @@ MonoBehaviour:
   titleText: {fileID: 8714734491673372664}
   bodyText: {fileID: 9077830209336766190}
   nextButtonRoot: {fileID: 5937400841858549759}
+  showAutomaticallyOnFirstEntry: 1
   pages:
   - title: "\xBFQu\xE9 hay que hacer?"
     body: "Cada cliente tiene sabores que le gustan y otros que no le gustan nada.

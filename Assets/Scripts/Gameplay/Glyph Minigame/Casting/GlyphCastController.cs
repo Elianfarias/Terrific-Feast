@@ -8,12 +8,13 @@ public class GlyphCastController : MonoBehaviour
     [SerializeField] private DrawTrailRenderer trail;
 
     [Header("Inicio del trazo")]
-    [Tooltip("Tiempo que hay que mantener el clic para iniciar el glifo.")]
+    [Tooltip("Tiempo mínimo que debe durar el clic para validar el trazo. El dibujo aparece inmediatamente.")]
     [SerializeField, Min(0f)] private float minimumHoldDuration = 1f;
 
     private DrinkRecipe currentRecipe;
     private bool pointerDown;
-    private bool drawingStarted;
+    private bool pendingResolution;
+    private float pendingAccuracy;
     private float pointerDownTime;
 
     public event Action<GameObject, DrinkRecipe, float> OnInvocationResolved;
@@ -26,14 +27,14 @@ public class GlyphCastController : MonoBehaviour
     {
         recognizer.OnPatternComplete -= ResolveInvocation;
         pointerDown = false;
-        drawingStarted = false;
+        pendingResolution = false;
     }
 
     // Asigna la receta activa y notifica a quien esté escuchando.
     public void SetRecipe(DrinkRecipe recipe)
     {
         pointerDown = false;
-        drawingStarted = false;
+        pendingResolution = false;
         currentRecipe = recipe;
         DrawPattern pattern = recipe != null ? recipe.glyph : null;
         recognizer.SetPattern(pattern);
@@ -50,49 +51,62 @@ public class GlyphCastController : MonoBehaviour
     {
         if (!soul.IsAvailable || currentRecipe == null) return;
 
-        // Un clic corto queda como una intención cancelada: no consume el
-        // alma ni dispara un resultado con precisión cero.
         pointerDown = true;
-        drawingStarted = false;
         pointerDownTime = Time.unscaledTime;
+        recognizer.StartDrawing();
+        trail.BeginTrail(pos);
     }
 
     public void OnDrawUpdate(Vector2 pos)
     {
         if (!pointerDown || !soul.IsAvailable || currentRecipe == null) return;
 
-        if (!drawingStarted)
-        {
-            if (Time.unscaledTime - pointerDownTime < minimumHoldDuration)
-                return;
-
-            drawingStarted = true;
-            recognizer.StartDrawing();
-            trail.BeginTrail(pos);
-        }
-
         recognizer.UpdateDrawing(pos);
         trail.AddPoint(pos);
+
+        if (pendingResolution && Time.unscaledTime - pointerDownTime >= minimumHoldDuration)
+            CompleteInvocation(pendingAccuracy);
     }
 
     public void OnDrawEnd()
     {
         if (!pointerDown) return;
 
+        bool heldLongEnough = Time.unscaledTime - pointerDownTime >= minimumHoldDuration;
         pointerDown = false;
-        if (!drawingStarted)
+        if (!heldLongEnough)
         {
+            recognizer.CancelDrawing();
+            pendingResolution = false;
             trail.ClearTrail();
             return;
         }
 
-        drawingStarted = false;
+        if (pendingResolution)
+        {
+            CompleteInvocation(pendingAccuracy);
+            return;
+        }
+
         recognizer.StopDrawing();
     }
 
     // Resuelve el trazo terminado y consume el alma.
     private void ResolveInvocation(float accuracy)
     {
+        if (pointerDown && Time.unscaledTime - pointerDownTime < minimumHoldDuration)
+        {
+            pendingAccuracy = accuracy;
+            pendingResolution = true;
+            return;
+        }
+
+        CompleteInvocation(accuracy);
+    }
+
+    private void CompleteInvocation(float accuracy)
+    {
+        pendingResolution = false;
         soul.Consume();
         trail.ClearTrail();
 
