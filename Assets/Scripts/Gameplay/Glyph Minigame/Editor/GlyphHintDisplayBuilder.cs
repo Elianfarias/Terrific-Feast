@@ -68,7 +68,7 @@ public static class GlyphHintDisplayBuilder
 
         Text label = textGO.GetComponent<Text>();
         label.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-        label.fontSize = 22;
+        label.fontSize = 28;
         label.alignment = TextAnchor.MiddleCenter;
         label.color = Color.black;
         label.horizontalOverflow = HorizontalWrapMode.Wrap;

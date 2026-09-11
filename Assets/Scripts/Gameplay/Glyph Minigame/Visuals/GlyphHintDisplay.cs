@@ -11,6 +11,7 @@ public class GlyphHintDisplay : MonoBehaviour
     [SerializeField] private RectTransform panel;
     [SerializeField] private CanvasGroup group;
     [SerializeField] private Text hintText;
+    [SerializeField, Min(1)] private int hintFontSize = 28;
 
     [Header("Animación")]
     [SerializeField] private Vector2 entryOffset = new Vector2(-400f, 0f);
@@ -28,6 +29,8 @@ public class GlyphHintDisplay : MonoBehaviour
         if (panel == null || group == null) return;
 
         restingAnchoredPosition = panel.anchoredPosition;
+        if (hintText != null)
+            hintText.fontSize = hintFontSize;
         group.alpha = 0f;
         panel.gameObject.SetActive(false);
     }

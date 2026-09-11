@@ -103,7 +103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Audio Settings
+  m_text: Configuración de sonido
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bed96767ce0b41042a3eeba402d2e424, type: 2}
   m_sharedMaterial: {fileID: 719347553110452392, guid: bed96767ce0b41042a3eeba402d2e424, type: 2}
@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673588649797477046, guid: c4d658fb14b202c49877028b3b8f060d, type: 3}
       propertyPath: m_text
-      value: Music
+      value: Música
       objectReference: {fileID: 0}
     - target: {fileID: 5673588649797477046, guid: c4d658fb14b202c49877028b3b8f060d, type: 3}
       propertyPath: m_fontAsset
@@ -514,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673588649797477046, guid: c4d658fb14b202c49877028b3b8f060d, type: 3}
       propertyPath: m_text
-      value: Effects
+      value: Efectos
       objectReference: {fileID: 0}
     - target: {fileID: 5673588649797477046, guid: c4d658fb14b202c49877028b3b8f060d, type: 3}
       propertyPath: m_fontAsset

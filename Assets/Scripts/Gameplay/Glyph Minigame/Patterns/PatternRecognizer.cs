@@ -57,6 +57,14 @@ public class PatternRecognizer : MonoBehaviour
         if (isDrawing) Finish();
     }
 
+    // Cancela un clic corto sin resolver el patrón ni emitir un resultado.
+    public void CancelDrawing()
+    {
+        isDrawing = false;
+        currentNodeIndex = 0;
+        nodesHitCorrectly = 0;
+    }
+
     // Calcula la precisión final y dispara OnPatternComplete.
     private void Finish()
     {

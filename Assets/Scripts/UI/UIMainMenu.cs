@@ -14,6 +14,8 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] private GameObject panelMainMenu;
     [SerializeField] private GameObject panelSettings;
     [SerializeField] private GameObject panelCredits;
+    [Tooltip("Logo que solo debe verse mientras está abierto el menú principal.")]
+    [SerializeField] private GameObject logo;
     [SerializeField] private Image backgroundInGameImage;
 
     [Header("Buttons Main Menu")]
@@ -28,6 +30,17 @@ public class UIMainMenu : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+
+        // En el menú principal el logo está fuera del prefab de botones. Lo
+        // buscamos como respaldo para que también funcione en escenas donde
+        // el campo todavía no quedó asignado desde el inspector.
+        if (logo == null && SceneManager.GetActiveScene().name == "MainMenu")
+            logo = GameObject.Find("Logo");
+
+        // Mantiene funcional la X aunque una variante del prefab de créditos
+        // no tenga la referencia serializada en UIMainMenu.
+        if (btnBackCredits == null && panelCredits != null)
+            btnBackCredits = panelCredits.GetComponentInChildren<Button>(true);
 
         btnStart.onClick.AddListener(TogglePause);
         btnSettings.onClick.AddListener(OnSettingClicked);
@@ -118,22 +131,25 @@ public class UIMainMenu : MonoBehaviour
     {
         if (panelCredits != null && panelCredits.activeSelf)
             panelCredits.SetActive(false);
-        if (panelSettings.activeSelf)
-            panelCredits.SetActive(false);
+        if (panelSettings != null && panelSettings.activeSelf)
+            panelSettings.SetActive(false);
 
         panelMainMenu.SetActive(!panelMainMenu.activeSelf);
+        SetLogoVisible(panelMainMenu.activeSelf);
     }
 
     private void OnSettingClicked()
     {
         ToggleUIMainMenu();
         panelSettings.SetActive(true);
+        SetLogoVisible(false);
     }
 
     private void OnCreditClicked()
     {
         ToggleUIMainMenu();
         panelCredits.SetActive(true);
+        SetLogoVisible(false);
     }
 
     private void OnExitClicked()
@@ -145,5 +161,11 @@ public class UIMainMenu : MonoBehaviour
     private void OnBackCredits()
     {
         ToggleUIMainMenu();
+    }
+
+    private void SetLogoVisible(bool visible)
+    {
+        if (logo != null)
+            logo.SetActive(visible);
     }
 }
