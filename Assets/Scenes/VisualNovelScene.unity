@@ -119,6 +119,43 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16626843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 16626844}
+  m_Layer: 5
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &16626844
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16626843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 272623239}
+  - {fileID: 1809452622}
+  m_Father: {fileID: 866231792}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125602295 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1024233449951753394, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
@@ -270,6 +307,8 @@ MonoBehaviour:
   fondoTarde: {fileID: 1558614662}
   fondoNoche: {fileID: 215738674}
   linePresenter: {fileID: 1053026913}
+  TutoGli: {fileID: 1809452623}
+  TutoBebidas: {fileID: 272623240}
   gameOverPanel: {fileID: 2040887313}
   gameOverGroup: {fileID: 816039839}
   gameOverSound: {fileID: 8300000, guid: 50ed734f961348b4b9d3a34cb381d7df, type: 3}
@@ -292,6 +331,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &272623238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272623239}
+  - component: {fileID: 272623241}
+  - component: {fileID: 272623240}
+  m_Layer: 5
+  m_Name: capturaBebidas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &272623239
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272623238}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 16626844}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.47904, y: 0.61154}
+  m_SizeDelta: {x: 1915.9, y: 1070.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &272623240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272623238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 4e2b485be59d745489395bd6b8954060, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &272623241
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272623238}
+  m_CullTransparentMesh: 1
 --- !u!1001 &304151549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -359,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 1024233449951753394, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: a630d598217663740b2f14e151f82b34, type: 3}
+      objectReference: {fileID: 2800000, guid: 757865c9600f3324abacfbf6300d02b4, type: 3}
     - target: {fileID: 3338855207984021143, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1165.5393
@@ -403,7 +514,7 @@ PrefabInstance:
     - target: {fileID: 8874475324159330592, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 2c8d19dca74b1744c99c003e6bddef9c, type: 3}
+      objectReference: {fileID: 2800000, guid: ab005e02cdf008e4db3d9eaea05ee118, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -477,7 +588,7 @@ PrefabInstance:
     - target: {fileID: 1024233449951753394, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: f01276e05bd2bc94ca9d2238c0e07834, type: 3}
+      objectReference: {fileID: 2800000, guid: c121cf1f48966fe498f6cb40cc846124, type: 3}
     - target: {fileID: 3338855207984021143, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 780.8461
@@ -521,7 +632,7 @@ PrefabInstance:
     - target: {fileID: 8874475324159330592, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: ed2d6d02da1677e44a9cc01711dfc015, type: 3}
+      objectReference: {fileID: 2800000, guid: a705dc9d52ad30a4f8a51d266e030ed1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1220,12 +1331,15 @@ PrefabInstance:
       addedObject: {fileID: 215738673}
     - targetCorrespondingSourceObject: {fileID: 2355361765340444347, guid: 52571f68872914e24837210513edea1d, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 1801549232}
+      addedObject: {fileID: 16626844}
     - targetCorrespondingSourceObject: {fileID: 2355361765340444347, guid: 52571f68872914e24837210513edea1d, type: 3}
       insertIndex: 4
-      addedObject: {fileID: 1276458725}
+      addedObject: {fileID: 1801549232}
     - targetCorrespondingSourceObject: {fileID: 2355361765340444347, guid: 52571f68872914e24837210513edea1d, type: 3}
       insertIndex: 5
+      addedObject: {fileID: 1276458725}
+    - targetCorrespondingSourceObject: {fileID: 2355361765340444347, guid: 52571f68872914e24837210513edea1d, type: 3}
+      insertIndex: 6
       addedObject: {fileID: 522842413}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3859336324316773512, guid: 52571f68872914e24837210513edea1d, type: 3}
@@ -1554,7 +1668,7 @@ PrefabInstance:
     - target: {fileID: 1024233449951753394, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 4e7a39a31c7853341b4e619060e777a2, type: 3}
+      objectReference: {fileID: 2800000, guid: 1c5da3153690c4c4c9fea6e2a9d0e5fd, type: 3}
     - target: {fileID: 3338855207984021143, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 902.9709
@@ -1598,7 +1712,7 @@ PrefabInstance:
     - target: {fileID: 8874475324159330592, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 3480b7850bba4d340ab152019f1eae82, type: 3}
+      objectReference: {fileID: 2800000, guid: 5a8690231410c9d4c9f5f29b0e7ab1b3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2055,7 +2169,7 @@ PrefabInstance:
     - target: {fileID: 1024233449951753394, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: a7c5f413bf68a004db9e6ae473063e87, type: 3}
+      objectReference: {fileID: 2800000, guid: 95572868333158244ab87061dcdb882f, type: 3}
     - target: {fileID: 3338855207984021143, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1031.2021
@@ -2099,7 +2213,7 @@ PrefabInstance:
     - target: {fileID: 8874475324159330592, guid: 27a97ed737a34f4478c3948660d7ec7c, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 9b9483a9032b7d84193d3b3c7560ef4f, type: 3}
+      objectReference: {fileID: 2800000, guid: 9d796bb6a9fbc8e4da40530f08cc32af, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2320,7 +2434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.000122, y: -13.493042}
+  m_AnchoredPosition: {x: 14.7, y: -13.493042}
   m_SizeDelta: {x: 769.9349, y: 681.4946}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1801549233
@@ -2357,6 +2471,78 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801549231}
+  m_CullTransparentMesh: 1
+--- !u!1 &1809452621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809452622}
+  - component: {fileID: 1809452624}
+  - component: {fileID: 1809452623}
+  m_Layer: 5
+  m_Name: capturaGli
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1809452622
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809452621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 16626844}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.47791, y: 0.60727}
+  m_SizeDelta: {x: 1915.9, y: 1070.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1809452623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809452621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 0eb5e0b531e713c46af238b41cbb1bfb, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1809452624
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809452621}
   m_CullTransparentMesh: 1
 --- !u!82 &1888128408 stripped
 AudioSource:
@@ -2548,6 +2734,7 @@ GameObject:
   - component: {fileID: 2050887266}
   - component: {fileID: 2050887265}
   - component: {fileID: 2050887264}
+  - component: {fileID: 2050887267}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2629,6 +2816,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050887267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050887263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cec9910de46ec4f977a5a52cef588a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
+  defaultDuration: 0.25
+  defaultStrength: 0.4
+  vibrato: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

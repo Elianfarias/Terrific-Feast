@@ -6,11 +6,11 @@ using UnityEngine;
 public class ActiveCustomerLoader : MonoBehaviour
 {
     // Mismo orden fijo que Personaje.cs (ID FIJOS): 0=Tartu, 1=Kerita, 2=Fue, 3=Naima.
-    private static readonly string[] CharacterIds = { "Tartu", "Kerita", "Fue", "Naima" };
+    private static readonly string[] CharacterIds = { "Tartu", "Kerita", "Fue", "Naima", "Osvaldo"};
 
     // Nodo de Yarn donde arranca el encuentro con cada personaje (para
     // reintentarlo entero si el jugador muere en el minijuego).
-    private static readonly string[] EntryNodes = { "tartu", "kerita", "fue", "naima" };
+    private static readonly string[] EntryNodes = { "tartu", "kerita", "fue", "naima","osvaldo" };
 
     [SerializeField] private GameStateProgress progress;
     [SerializeField] private MonsterCustomer customer;
