@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,7 +37,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float waterRiseSpeed = 0.7f;
     [SerializeField] private float retryDelay = 0.6f;
     [SerializeField] private float backToSignsDelay = 1.2f;
+    [SerializeField] private float signsEnableDelay = 0.4f;
+    [SerializeField] private float countdownSeconds = 3f;
 
+    public event Action<int> OnCountdownTick;
+    public event Action OnCountdownFinished;
+    public event Action OnMistakeFeedback;
+    public event Action OnSuccessFeedback;
     private MazeEntry activeEntry;
 
     private GameObject keyboardWandInstance;
@@ -52,6 +59,8 @@ public class GameManager : MonoBehaviour
 
     private bool keyboardReachedGoal;
     private bool mouseReachedGoal;
+
+    private Coroutine countdownRoutine;
     private void Awake()
     {
         if (mainCamera == null) mainCamera = Camera.main;
@@ -66,6 +75,7 @@ public class GameManager : MonoBehaviour
         foreach (var entry in entries)
             entry.sign.OnClicked -= HandleSignClicked;
 
+        if (countdownRoutine != null) StopCoroutine(countdownRoutine);
         CleanupWandsAndWater();
         Cursor.visible = true;
     }
@@ -87,8 +97,16 @@ public class GameManager : MonoBehaviour
         {
             entry.maze.gameObject.SetActive(false);
             entry.sign.gameObject.SetActive(true);
-            entry.sign.SetInteractable(true);
+            entry.sign.SetInteractable(false);
         }
+
+        StartCoroutine(EnableSignsAfterDelay());
+    }
+    private IEnumerator EnableSignsAfterDelay()
+    {
+        yield return new WaitForSeconds(signsEnableDelay);
+        foreach (var entry in entries)
+            entry.sign.SetInteractable(true);
     }
     private void HandleSignClicked(SignButton sign)
     {
@@ -115,8 +133,27 @@ public class GameManager : MonoBehaviour
 
         SpawnWandsAndWater(entry);
 
+        // Freeze until the countdown finishes
+        SetWandsControlEnabled(false);
+        water.SetRising(false);
+
+        countdownRoutine = StartCoroutine(RunCountdown());
+    }
+    private IEnumerator RunCountdown()
+    {
+        int count = Mathf.CeilToInt(countdownSeconds);
+        for (int i = count; i > 0; i--)
+        {
+            OnCountdownTick?.Invoke(i);
+            yield return new WaitForSeconds(1f);
+        }
+
+        OnCountdownFinished?.Invoke();
+
         SetWandsControlEnabled(true);
-        water.SetRising(true);
+        if (water != null) water.SetRising(true);
+
+        countdownRoutine = null;
     }
     private void SpawnWandsAndWater(MazeEntry entry)
     {
@@ -198,6 +235,8 @@ public class GameManager : MonoBehaviour
         SetWandsControlEnabled(false);
         if (water != null) water.SetRising(false);
 
+        OnMistakeFeedback?.Invoke();
+
         activeEntry.maze.gameObject.SetActive(false);
         CleanupWandsAndWater();
         Invoke(nameof(GoToGlyphMinigame), retryDelay);
@@ -232,6 +271,8 @@ public class GameManager : MonoBehaviour
     {
         SetWandsControlEnabled(false);
         if (water != null) water.SetRising(false);
+
+        OnSuccessFeedback?.Invoke(); // "MUY BIEN"
 
         glass.PlayWinSequence(activeEntry.data.fullGlassSprite, OnWinSequenceFinished);
     }
