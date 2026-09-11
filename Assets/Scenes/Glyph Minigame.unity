@@ -579,6 +579,7 @@ MonoBehaviour:
   panel: {fileID: 1203010117}
   group: {fileID: 1203010114}
   hintText: {fileID: 1696666825}
+  hintFontSize: 28
   entryOffset: {x: 0, y: 0}
   slideDuration: 0.35
   slideEase: 27
@@ -1961,6 +1962,7 @@ MonoBehaviour:
   soul: {fileID: 1855363002}
   recognizer: {fileID: 163990527}
   trail: {fileID: 812502924}
+  minimumHoldDuration: 1
 --- !u!4 &1070304391
 Transform:
   m_ObjectHideFlags: 0
@@ -4065,6 +4067,10 @@ PrefabInstance:
       propertyPath: caster
       value: 
       objectReference: {fileID: 1070304390}
+    - target: {fileID: 4310205900256527439, guid: eb5f0290cfdd5444db4b3bf0640dbcfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4681935583736728124, guid: eb5f0290cfdd5444db4b3bf0640dbcfe, type: 3}
       propertyPath: m_Pivot.x
       value: 0

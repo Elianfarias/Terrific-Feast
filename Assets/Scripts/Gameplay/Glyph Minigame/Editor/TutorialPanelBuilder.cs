@@ -9,7 +9,7 @@ public static class TutorialPanelBuilder
     private const string CloseSpritePath = "Assets/Art/Sprites/UI/Transparent center/boton con x.png";
     private const string NextSpritePath = "Assets/Art/Sprites/UI/Transparent center/next boton.png";
 
-    // Crea el botón "?" y el panel de tutorial (oculto por defecto) y los conecta.
+    // Crea el botón "?" y el panel de tutorial y los conecta.
     [MenuItem("Magic/Build Tutorial Panel")]
     public static void Build()
     {
@@ -125,12 +125,8 @@ public static class TutorialPanelBuilder
         so.FindProperty("titleText").objectReferenceValue = title;
         so.FindProperty("bodyText").objectReferenceValue = body;
         so.FindProperty("nextButtonRoot").objectReferenceValue = nextButtonGO;
+        so.FindProperty("showAutomaticallyOnFirstEntry").boolValue = true;
         so.ApplyModifiedProperties();
-
-        // El panel arranca oculto desde acá (no desde Awake: panelRoot es
-        // este mismo objeto, y auto-desactivarse en su propio Awake generaba
-        // que la primera apertura se cancelara sola).
-        panelGO.SetActive(false);
 
         return panelGO;
     }
