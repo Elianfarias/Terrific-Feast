@@ -7,7 +7,14 @@ public class GlyphCastController : MonoBehaviour
     [SerializeField] private PatternRecognizer recognizer;
     [SerializeField] private DrawTrailRenderer trail;
 
+    [Header("Inicio del trazo")]
+    [Tooltip("Tiempo que hay que mantener el clic para iniciar el glifo.")]
+    [SerializeField, Min(0f)] private float minimumHoldDuration = 1f;
+
     private DrinkRecipe currentRecipe;
+    private bool pointerDown;
+    private bool drawingStarted;
+    private float pointerDownTime;
 
     public event Action<GameObject, DrinkRecipe, float> OnInvocationResolved;
     public event Action<DrawPattern> OnPatternChanged;
@@ -15,11 +22,18 @@ public class GlyphCastController : MonoBehaviour
     public event Action OnEnterRequested;
 
     private void OnEnable() => recognizer.OnPatternComplete += ResolveInvocation;
-    private void OnDisable() => recognizer.OnPatternComplete -= ResolveInvocation;
+    private void OnDisable()
+    {
+        recognizer.OnPatternComplete -= ResolveInvocation;
+        pointerDown = false;
+        drawingStarted = false;
+    }
 
     // Asigna la receta activa y notifica a quien esté escuchando.
     public void SetRecipe(DrinkRecipe recipe)
     {
+        pointerDown = false;
+        drawingStarted = false;
         currentRecipe = recipe;
         DrawPattern pattern = recipe != null ? recipe.glyph : null;
         recognizer.SetPattern(pattern);
@@ -35,19 +49,44 @@ public class GlyphCastController : MonoBehaviour
     public void OnDrawStart(Vector2 pos)
     {
         if (!soul.IsAvailable || currentRecipe == null) return;
-        recognizer.StartDrawing();
-        trail.BeginTrail(pos);
+
+        // Un clic corto queda como una intención cancelada: no consume el
+        // alma ni dispara un resultado con precisión cero.
+        pointerDown = true;
+        drawingStarted = false;
+        pointerDownTime = Time.unscaledTime;
     }
 
     public void OnDrawUpdate(Vector2 pos)
     {
-        if (!soul.IsAvailable || currentRecipe == null) return;
+        if (!pointerDown || !soul.IsAvailable || currentRecipe == null) return;
+
+        if (!drawingStarted)
+        {
+            if (Time.unscaledTime - pointerDownTime < minimumHoldDuration)
+                return;
+
+            drawingStarted = true;
+            recognizer.StartDrawing();
+            trail.BeginTrail(pos);
+        }
+
         recognizer.UpdateDrawing(pos);
         trail.AddPoint(pos);
     }
 
     public void OnDrawEnd()
     {
+        if (!pointerDown) return;
+
+        pointerDown = false;
+        if (!drawingStarted)
+        {
+            trail.ClearTrail();
+            return;
+        }
+
+        drawingStarted = false;
         recognizer.StopDrawing();
     }
 

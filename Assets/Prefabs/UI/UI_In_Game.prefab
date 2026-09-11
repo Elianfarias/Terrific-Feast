@@ -248,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1522447786094667131, guid: d447d010f479b004d885d49caa22949a, type: 3}
       propertyPath: m_Name
-      value: AudioSettings
+      value: Configuración de sonido
       objectReference: {fileID: 0}
     - target: {fileID: 2899173062867102724, guid: d447d010f479b004d885d49caa22949a, type: 3}
       propertyPath: m_Sprite
@@ -480,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8048943069279286936, guid: d447d010f479b004d885d49caa22949a, type: 3}
       propertyPath: m_text
-      value: Musica
+      value: Música
       objectReference: {fileID: 0}
     - target: {fileID: 8048943069279286936, guid: d447d010f479b004d885d49caa22949a, type: 3}
       propertyPath: m_fontColor.b
@@ -705,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673588649797477046, guid: c4d658fb14b202c49877028b3b8f060d, type: 3}
       propertyPath: m_text
-      value: UI
+      value: Interfaz
       objectReference: {fileID: 0}
     - target: {fileID: 5673588649797477046, guid: c4d658fb14b202c49877028b3b8f060d, type: 3}
       propertyPath: m_fontAsset
@@ -937,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5139983843928033498, guid: 94cfff88b3686254d82364568e8d9808, type: 3}
       propertyPath: m_text
-      value: 'Assets:'
+      value: 'Recursos:'
       objectReference: {fileID: 0}
     - target: {fileID: 5139983843928033498, guid: 94cfff88b3686254d82364568e8d9808, type: 3}
       propertyPath: m_fontAsset

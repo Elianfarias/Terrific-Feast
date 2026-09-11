@@ -215,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: Créditos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bed96767ce0b41042a3eeba402d2e424, type: 2}
   m_sharedMaterial: {fileID: 719347553110452392, guid: bed96767ce0b41042a3eeba402d2e424, type: 2}

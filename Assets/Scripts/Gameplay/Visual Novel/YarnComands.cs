@@ -290,7 +290,9 @@ public class YarnComands : MonoBehaviour
     [YarnCommand("gameOver")]
     public IEnumerator GameOver()
     {
-        AudioController.Instance?.PauseBackgroundMusic();
+        // La pantalla de final malo no debe dejar la música de la escena
+        // sonando por debajo del cartel.
+        AudioController.Instance?.StopBackgroundMusic();
         if (gameOverSound != null)
             AudioController.Instance?.PlaySoundEffect(gameOverSound);
 
@@ -305,8 +307,6 @@ public class YarnComands : MonoBehaviour
         yield return new WaitForSecondsRealtime(gameOverFadeDuration);
 
         gameOverPanel.SetActive(false);
-        AudioController.Instance?.ResumeBackgroundMusic();
-
         data.Progreso.resumeNode = ActiveCustomerLoader.GetEntryNode(data.Progreso.activeChar);
         data.guardarProgreso();
 
@@ -319,6 +319,8 @@ public class YarnComands : MonoBehaviour
     [YarnCommand("mostrarFinal")]
     public void MostrarFinal()
     {
+        Time.timeScale = 1f;
+        AudioController.Instance?.StopBackgroundMusic();
         endPanel.SetActive(true);
 
         if (endSound != null)
@@ -328,6 +330,8 @@ public class YarnComands : MonoBehaviour
     // Conectar al OnClick del botón "Salir" dentro del panel final.
     public void Salir()
     {
+        Time.timeScale = 1f;
+        AudioController.Instance?.StopBackgroundMusic();
         SceneManager.LoadScene("MainMenu");
     }
 
