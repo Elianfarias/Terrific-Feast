@@ -333,9 +333,7 @@ OSVALDO: ¿Y que se enoje conmigo?
 OSVALDO: ¡No gracias!
 OSVALDO: Igual tranqui que por suerte, siempre pide lo mismo.
 - ¿Y eso es...?
-<<activarAuto YarnComands>>
-OSVALDO: ¡El Gran Osvaldo! un trago que lleva amargo verde, anís eléctrico y
-<<desactivarAuto YarnComands>>
+OSVALDO: ¡El Gran Osvaldo! un trago que lleva amargo verde, anís eléctrico y...
 OSVALDO: ehhh...
 OSVALDO: No me acuerdo.
 - Pero si es tu trago, ¿Cómo te podes olvidar algo que inventaste?
@@ -425,7 +423,7 @@ OSVALDO: Mira que mañana Tartu y Fue no suelen venir pero va a venir un tipazo 
 <<osvaldoDesaparece YarnComands>>
 Y así, con Osvaldo cerramos el local. 
 Antes de tomar caminos opuestos, nos despedimos con una sonrisa; sabiendo que a partir de ahora.
-no solo trabajaríamos juntos, sino que también, seríamos buenos compañeros.
+No solo trabajaríamos juntos, sino que también, seríamos buenos compañeros.
 Al final del día, más allá de los sustos y las complicaciones del camino, conocer gente y aprender cosas nuevas... Siempre es mágico.
 <<mostrarFinal YarnComands>>
 ===
