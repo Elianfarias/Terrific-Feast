@@ -8,7 +8,7 @@ position: 546,-304
 <<osvaldoDesaparece YarnComands>>
 Cuando entras al bar, ves un lugar íntimo pero a la vez espacioso, con todas las sillas y mesas preparadas para ser usadas, pero donde aún está la paz de ser el primero en llegar.
 Intentas acostumbrarte al lugar cuando de la nada, aparece un sujeto que no reconoces pero por su actitud, notás que es el dueño del local y quien puso los letreros de “Se busca empleado”.
-Te acercas para hablar con él pero él se te adelanta con la primera palabra.
+Te acercas para hablar pero él se te adelanta con la primera palabra.
 <<osvaldoAparece YarnComands>>
 OSVALDO: Hola querido, un gusto que te hayas unido a el Mystical Pub, bar n°1 en la región.
 OSVALDO: ¿Cómo estás?
@@ -142,7 +142,7 @@ position: 21,33
         <<tartuAparece YarnComands>>
         TARTU: ¡No, No! está bien. 
         TARTU: Osvaldo castigó a Tartu la última vez.
-        TARTU: Mañana traigo más dinero.
+        TARTU: Mañana traigo dinero.
         - Gracias, vuelva pronto.
 <<else>>
     <<tartuDesaparece YarnComands>>
@@ -199,7 +199,7 @@ KERITA: Muchas formalidades, ¡quiero algo fuerte!
 ->Está bien, ahí te lo preparo
     KERITA: Muchas gracias compa, te pido también que tenga cereza humeante que me quiero dar el gusto.
 ->¿Solo que sea fuerte, no queres agregar nada más?
-    KERITA: ¡Uy sí! una bebida fuerte con cereza humeante.
+    KERITA: ¡Uy sí! una bebida fuerte con cereza humeante, mientras mas porcentaje de alcohol.
     KERITA: El resto queda en tu imaginación y quedate tranquilo que si haces lo que te pido, voy a hablarle bien a Osvaldo.
 <<irAlMinijuego YarnComands "kerita_reaccion">>
 ===
@@ -369,6 +369,7 @@ NAIMA: Es de noche, aunque viendo su cara, esto tampoco parece un bar ya que par
 ->Tenés razón, un poco incivilizado de mi parte. ¿Qué se le ofrece?
     NAIMA: Puedo ver que la incivilización aún no se le pasó... 
     NAIMA: Sírvame lo mismo de siempre.
+Notas como Naima empieza a perder poco a poco la paciencia
 ->Ya se lo preparo.
     NAIMA: Espero que no tenga el descaro de tardar como lo hacía el anterior, mi tiempo es valioso y ese sabor humeante es la única razón por la que no clausuré el lugar.
 ->Disculpe las molestias pero este es mi primer día, no se cual es su trago.
@@ -385,7 +386,7 @@ position: 21,33
 <<naimaAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     NAIMA: Mmm... aceptable.
-    NAIMA:Puede ser un poco despistado, pero nopuedo negar que tienetalento, joven.
+    NAIMA:Puede ser un poco despistado, pero no puedo negar que tiene talento, joven.
 <<else>>
     NAIMA: Espero que esta blasfemia a la que llamas trago haya sido una equivocación.
     <<naimaDesaparece YarnComands>>
