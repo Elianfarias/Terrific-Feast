@@ -72,10 +72,12 @@ OSVALDO: Eso es todo.
     OSVALDO: Solo quiero un caramelo azul con menta polar, y quedate tranquilo si te equivocas que es para aprender.
 <<CambiarPersonaje YarnComands 4>>
 <<GuardarProgreso YarnComands>>
+<<cargando YarnComands>>
 <<irAlMinijuego YarnComands "osvaldo_reaccion">>
 ===
 title: osvaldo_reaccion
 ---
+<<cargando YarnComands>>
 <<osvaldoAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     OSVALDO: Bueno, veo que le entendiste la mano.
@@ -120,12 +122,15 @@ TARTU: Quiero que mates todas las libélulas.
     <<tartuEDesaparece YarnComands>>
     <<tartuAparece YarnComands>>
     TARTU: Aquí tiene dinero, ahora mátelas.
+<<cargando YarnComands>>
 <<irAlMinijuego YarnComands "tartu_reaccion">>
 ===
 
 title: tartu_reaccion
 position: 21,33
 ---
+<<cargando YarnComands>>
+<<desapareceCargando YarnComands>>
 <<tartuAparece YarnComands>>
 <<if resultadoMiniJuego()>>
     TARTU: Buen trago, quiero otro.
@@ -201,6 +206,7 @@ KERITA: Muchas formalidades, ¡quiero algo fuerte!
 ->¿Solo que sea fuerte, no queres agregar nada más?
     KERITA: ¡Uy sí! una bebida fuerte con cereza humeante, mientras mas porcentaje de alcohol.
     KERITA: El resto queda en tu imaginación y quedate tranquilo que si haces lo que te pido, voy a hablarle bien a Osvaldo.
+<<cargando YarnComands>>
 <<irAlMinijuego YarnComands "kerita_reaccion">>
 ===
 
@@ -209,6 +215,8 @@ position: 21,33
 ---
 <<fondoTarde YarnComands>>
 <<keritaAparece YarnComands>>
+<<cargando YarnComands>>
+<<desapareceCargando YarnComands>>
 <<if resultadoMiniJuego()>>
     KERITA: Esto es lo que quería, ¡Gracias!
 <<else>>
@@ -258,12 +266,15 @@ FUE: Quiero un agri(inteligible)illo con fuego co(inteligible) y (inteligible) i
 ->Disculpa, ¿Me lo puedes repetir otra vez?
     FUE: ...
     - Bueno, veo lo que te puedo hacer.
+<<cargando YarnComands>>
 <<irAlMinijuego YarnComands "fue_reaccion">>
 ===
 
 title: fue_reaccion
 position: 21,33
 ---
+<<cargando YarnComands>>
+<<desapareceCargando YarnComands>>
 <<GuardarProgreso YarnComands>>
 <<fondoTarde YarnComands>>
 <<fueAparece YarnComands>>
@@ -376,12 +387,15 @@ Notas como Naima empieza a perder poco a poco la paciencia
     NAIMA: Ugh, de esto me quejaré con su jefe.
     NAIMA: Quiero un Gran Osvaldo.
     NAIMA: El dueño tendrá un lugar decadente, pero ese sabor humeante es de las pocas cosas destacables.
+<<cargando YarnComands>>
 <<irAlMinijuego YarnComands "naima_reaccion">>
 ===
 
 title: naima_reaccion
 position: 21,33
 ---
+<<cargando YarnComands>>
+<<desapareceCargando YarnComands>>
 <<fondoNoche YarnComands>>
 <<naimaAparece YarnComands>>
 <<if resultadoMiniJuego()>>
