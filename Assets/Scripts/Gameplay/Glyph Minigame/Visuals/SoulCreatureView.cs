@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class SoulCreatureView : MonoBehaviour
     [SerializeField] private CanvasGroup creatureGroup;
     [SerializeField] private Sprite aliveSprite;
     [SerializeField] private Sprite deadSprite;
+    [SerializeField] private DragonflySoul SoulDragonfly;
     [SerializeField] private float holdDeadDuration = 1.5f;
     [SerializeField] private float fadeOutDuration = 0.3f;
     [SerializeField] private float reviveFadeDuration = 0.2f;
@@ -30,13 +32,12 @@ public class SoulCreatureView : MonoBehaviour
     private IEnumerator DeathSequence()
     {
         if (image != null) image.sprite = deadSprite;
-
+        SoulDragonfly.animationStart();
         yield return new WaitForSeconds(holdDeadDuration);
-
         creatureGroup.DOKill();
+        SoulDragonfly.gameObject.SetActive(false);
         creatureGroup.DOFade(0f, fadeOutDuration);
         yield return new WaitForSeconds(fadeOutDuration);
-
         OnCreatureGone?.Invoke();
     }
 

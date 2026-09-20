@@ -34,6 +34,8 @@ public class YarnComands : MonoBehaviour
     //imagenes del tutuorial
     [SerializeField] private RawImage TutoGli;
     [SerializeField] private RawImage TutoBebidas;
+    // pantalla de carga
+    [SerializeField] private GameObject LoadingScreen;
     //Game Over
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private CanvasGroup gameOverGroup;
@@ -126,6 +128,21 @@ public class YarnComands : MonoBehaviour
     {
         MostrarFondo(fondoNoche);
     }
+
+    [YarnCommand("cargando")]
+    public IEnumerator Cargando()
+    {
+        LoadingScreen.gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(1f);
+        LoadingScreen.gameObject.SetActive(false);
+    }
+
+    [YarnCommand("desapareceCargando")]
+    public void DesapareceCargando()
+    {
+        LoadingScreen.gameObject.SetActive(false);
+    }
+
     // Valor absoluto (no ++): así reintentar el mismo nodo tras un Game Over
     // no vuelve a incrementar el personaje activo por error.
     [YarnCommand("CambiarPersonaje")]

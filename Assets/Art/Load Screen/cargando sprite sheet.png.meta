@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 7e7fc1b10ba35c74582e9f45d1bb6b7e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5043951944942206000
+    second: cargando sprite sheet_0
+  - first:
+      213: -4577371328214272480
+    second: cargando sprite sheet_1
+  - first:
+      213: -5821308270280457295
+    second: cargando sprite sheet_2
+  - first:
+      213: 8903862587584042591
+    second: cargando sprite sheet_3
+  - first:
+      213: -8141825744424746083
+    second: cargando sprite sheet_4
+  - first:
+      213: 6303617448685929270
+    second: cargando sprite sheet_5
+  - first:
+      213: -4435214642898408362
+    second: cargando sprite sheet_6
+  - first:
+      213: -5526643010597896533
+    second: cargando sprite sheet_7
+  - first:
+      213: -3302833858119480503
+    second: cargando sprite sheet_8
+  - first:
+      213: 758321395473752683
+    second: cargando sprite sheet_9
+  - first:
+      213: -7740147069367227996
+    second: cargando sprite sheet_10
+  - first:
+      213: -5004696082889038316
+    second: cargando sprite sheet_11
+  - first:
+      213: -2550632171806515510
+    second: cargando sprite sheet_12
+  - first:
+      213: -7563013066155298864
+    second: cargando sprite sheet_13
+  - first:
+      213: -5024827294888966274
+    second: cargando sprite sheet_14
+  - first:
+      213: -4786257391722661471
+    second: cargando sprite sheet_15
+  - first:
+      213: -5352140663568227333
+    second: cargando sprite sheet_16
+  - first:
+      213: 3392088245230548517
+    second: cargando sprite sheet_17
+  - first:
+      213: -476873733374623374
+    second: cargando sprite sheet_18
+  - first:
+      213: 4864223562123626266
+    second: cargando sprite sheet_19
+  - first:
+      213: -2591792949479421671
+    second: cargando sprite sheet_20
+  - first:
+      213: -1566789724821422016
+    second: cargando sprite sheet_21
+  - first:
+      213: 2873597281096280816
+    second: cargando sprite sheet_22
+  - first:
+      213: -1161186619443105588
+    second: cargando sprite sheet_23
+  - first:
+      213: -7741308296559181979
+    second: cargando sprite sheet_24
+  - first:
+      213: -2666372122426785393
+    second: cargando sprite sheet_25
+  - first:
+      213: -1701353059917592608
+    second: cargando sprite sheet_26
+  - first:
+      213: -6849959501082289498
+    second: cargando sprite sheet_27
+  - first:
+      213: 32432198589417163
+    second: cargando sprite sheet_28
+  - first:
+      213: 1077495143034989910
+    second: cargando sprite sheet_29
+  - first:
+      213: -9110087304338357605
+    second: cargando sprite sheet_30
+  - first:
+      213: -2883714885600284789
+    second: cargando sprite sheet_31
+  - first:
+      213: 1995228137788856421
+    second: cargando sprite sheet_32
+  - first:
+      213: 525016824780253157
+    second: cargando sprite sheet_33
+  - first:
+      213: -1421685278825748124
+    second: cargando sprite sheet_34
+  - first:
+      213: 9046384459884748697
+    second: cargando sprite sheet_35
+  - first:
+      213: 8592058940830883579
+    second: cargando sprite sheet_36
+  - first:
+      213: -263424114614279693
+    second: cargando sprite sheet_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cargando sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 438
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d344991e68400ab0800000000000000
+      internalID: -5043951944942206000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cargando sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 438
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026fab86709e970c0800000000000000
+      internalID: -4577371328214272480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cargando sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 0
+        width: 438
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3c3e588fe863fa0800000000000000
+      internalID: -5821308270280457295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cargando sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 0
+        width: 438
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5656d549dfd09b70800000000000000
+      internalID: 8903862587584042591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0b17b477b3918f3448ba3c35cee682ad
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":438.0,"y":115.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      cargando sprite sheet_0: -5043951944942206000
+      cargando sprite sheet_1: -4577371328214272480
+      cargando sprite sheet_2: -5821308270280457295
+      cargando sprite sheet_3: 8903862587584042591
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
