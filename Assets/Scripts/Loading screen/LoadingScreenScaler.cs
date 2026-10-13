@@ -1,8 +1,5 @@
-
-
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class LoadingScreenScaler : MonoBehaviour
 {
     [SerializeField] private Camera targetCamera;
@@ -20,10 +17,7 @@ public class LoadingScreenScaler : MonoBehaviour
      */
     private void Awake()
     {
-        // Variables locales.
         Camera mainCamera = Camera.main;
-
-        // Inicialización.
         background = GetComponent<SpriteRenderer>();
 
         if (targetCamera == null)
@@ -40,7 +34,6 @@ public class LoadingScreenScaler : MonoBehaviour
      */
     private void LateUpdate()
     {
-        // Variables locales.
         bool resolutionChanged;
         bool cameraChanged;
 
@@ -73,11 +66,9 @@ public class LoadingScreenScaler : MonoBehaviour
      * Ajusta el fondo para cubrir el área visible de la cámara.
      * Calcula X e Y de forma independiente para permitir que
      * la imagen se deforme si cambia la relación de aspecto.
-     * No modifica la posición ni la escala local del cartel hijo.
      */
     private void UpdateBackgroundScale()
     {
-        // Variables locales.
         float visibleHeight;
         float visibleWidth;
         float spriteWidth;
